@@ -6,7 +6,7 @@ type AlibabaAlihealthDrugMscSearchbillRequest struct {
         企业标识     */
     RefEntId  *string `json:"ref_ent_id" required:"true" `
     /*
-        货主（物流企业代货主查询时填写）     */
+        单据所有者     */
     AuthRefUserId  *string `json:"auth_ref_user_id,omitempty" required:"false" `
     /*
         开始日期     */
@@ -15,10 +15,10 @@ type AlibabaAlihealthDrugMscSearchbillRequest struct {
         结束日期     */
     EndDate  *string `json:"end_date" required:"true" `
     /*
-        发货企业     */
+        发货企业entId     */
     PartnerIdSend  *string `json:"partner_id_send,omitempty" required:"false" `
     /*
-        收货企业     */
+        收货企业entId     */
     PartnerIdRecv  *string `json:"partner_id_recv,omitempty" required:"false" `
     /*
         单据号码     */

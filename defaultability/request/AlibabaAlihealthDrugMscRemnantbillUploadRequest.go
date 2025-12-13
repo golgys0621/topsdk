@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugMscRemnantbillUploadRequest struct {

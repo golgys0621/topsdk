@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugMscUploadinoutbillRequest struct {
@@ -42,10 +42,10 @@ type AlibabaAlihealthDrugMscUploadinoutbillRequest struct {
 	   仓号     */
 	WarehouseId *string `json:"warehouse_id,omitempty" required:"false" `
 	/*
-	   药品ID[企业自已系统的药品ID]     */
+	   已经废弃     */
 	DrugId *string `json:"drug_id,omitempty" required:"false" `
 	/*
-	   追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】     */
+	   追溯码【多个码时用逗号拼接的字符串。要求数量在1万个码以下，允许混合药品的追溯码上传】     */
 	TraceCodes *[]string `json:"trace_codes" required:"true" `
 	/*
 	   调用方类型[必须填2]     */
@@ -119,6 +119,9 @@ type AlibabaAlihealthDrugMscUploadinoutbillRequest struct {
 	/*
 	   单据委托企业entId     */
 	AssEntId *string `json:"ass_ent_id,omitempty" required:"false" `
+	/*
+	   码解析策略,1代表整单解析成功(任一码解析失败，上传时整单返回错误),传其他值或者不传代表部分解析成功(跳过无法解析的码，其余正常处理并上传)     */
+	IgnorePartSuccessFlag *string `json:"ignore_part_success_flag,omitempty" required:"false" `
 }
 
 func (s *AlibabaAlihealthDrugMscUploadinoutbillRequest) SetBillCode(v string) *AlibabaAlihealthDrugMscUploadinoutbillRequest {
@@ -273,6 +276,10 @@ func (s *AlibabaAlihealthDrugMscUploadinoutbillRequest) SetAssEntId(v string) *A
 	s.AssEntId = &v
 	return s
 }
+func (s *AlibabaAlihealthDrugMscUploadinoutbillRequest) SetIgnorePartSuccessFlag(v string) *AlibabaAlihealthDrugMscUploadinoutbillRequest {
+	s.IgnorePartSuccessFlag = &v
+	return s
+}
 
 func (req *AlibabaAlihealthDrugMscUploadinoutbillRequest) ToMap() map[string]interface{} {
 	paramMap := make(map[string]interface{})
@@ -389,6 +396,9 @@ func (req *AlibabaAlihealthDrugMscUploadinoutbillRequest) ToMap() map[string]int
 	}
 	if req.AssEntId != nil {
 		paramMap["ass_ent_id"] = *req.AssEntId
+	}
+	if req.IgnorePartSuccessFlag != nil {
+		paramMap["ignore_part_success_flag"] = *req.IgnorePartSuccessFlag
 	}
 	return paramMap
 }

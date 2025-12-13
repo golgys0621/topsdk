@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugMscUploadcircubillRequest struct {
@@ -89,6 +89,9 @@ type AlibabaAlihealthDrugMscUploadcircubillRequest struct {
 	/*
 	   忽略校验项，1: 代表忽略码重复上传校验   0：代表需要进行码重复上传校验     */
 	IgnoreCheck *string `json:"ignore_check,omitempty" required:"false" `
+	/*
+	   码解析策略,1代表整单解析成功(任一码解析失败，上传时整单返回错误),传其他值或者不传代表部分解析成功(跳过无法解析的码，其余正常处理并上传)     */
+	IgnorePartSuccessFlag *string `json:"ignore_part_success_flag,omitempty" required:"false" `
 }
 
 func (s *AlibabaAlihealthDrugMscUploadcircubillRequest) SetBillCode(v string) *AlibabaAlihealthDrugMscUploadcircubillRequest {
@@ -203,6 +206,10 @@ func (s *AlibabaAlihealthDrugMscUploadcircubillRequest) SetIgnoreCheck(v string)
 	s.IgnoreCheck = &v
 	return s
 }
+func (s *AlibabaAlihealthDrugMscUploadcircubillRequest) SetIgnorePartSuccessFlag(v string) *AlibabaAlihealthDrugMscUploadcircubillRequest {
+	s.IgnorePartSuccessFlag = &v
+	return s
+}
 
 func (req *AlibabaAlihealthDrugMscUploadcircubillRequest) ToMap() map[string]interface{} {
 	paramMap := make(map[string]interface{})
@@ -289,6 +296,9 @@ func (req *AlibabaAlihealthDrugMscUploadcircubillRequest) ToMap() map[string]int
 	}
 	if req.IgnoreCheck != nil {
 		paramMap["ignore_check"] = *req.IgnoreCheck
+	}
+	if req.IgnorePartSuccessFlag != nil {
+		paramMap["ignore_part_success_flag"] = *req.IgnorePartSuccessFlag
 	}
 	return paramMap
 }
