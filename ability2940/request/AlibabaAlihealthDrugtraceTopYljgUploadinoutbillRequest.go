@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest struct {
@@ -42,10 +42,10 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest struct {
 	   仓号     */
 	WarehouseId *string `json:"warehouse_id,omitempty" required:"false" `
 	/*
-	   药品ID[企业自已系统的药品ID]     */
+	   已经废弃     */
 	DrugId *string `json:"drug_id,omitempty" required:"false" `
 	/*
-	   追溯码【多个码时用逗号拼接的字符串。要求数量在3500个码以下，但一般不要传这么多，如果网络不好很容易传输一半报错】注意：在同一张单据里，不能有重复的码；在同一张单据中不能同时上传有关联关系的大、小码     */
+	   追溯码【多个码时用逗号拼接的字符串。要求数量在1万个码以下，允许多个药品的追溯码混合上传】注意：在同一张单据里，不能有重复的码；在同一张单据中不能同时上传有关联关系的大、小码     */
 	TraceCodes *[]string `json:"trace_codes" required:"true" `
 	/*
 	   客户端类型[必须填2]     */
@@ -119,6 +119,9 @@ type AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest struct {
 	/*
 	   （协同平台数据合规）单据委托企业entId【疫苗药品出库单填写】     */
 	AssEntId *string `json:"ass_ent_id,omitempty" required:"false" `
+	/*
+	   码解析策略,1代表整单解析成功(任一码解析失败，上传时整单返回错误),传其他值或者不传代表部分解析成功(跳过无法解析的码，其余正常处理并上传)     */
+	IgnorePartSuccessFlag *string `json:"ignore_part_success_flag,omitempty" required:"false" `
 }
 
 func (s *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest) SetBillCode(v string) *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest {
@@ -273,6 +276,10 @@ func (s *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest) SetAssEntId(v s
 	s.AssEntId = &v
 	return s
 }
+func (s *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest) SetIgnorePartSuccessFlag(v string) *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest {
+	s.IgnorePartSuccessFlag = &v
+	return s
+}
 
 func (req *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest) ToMap() map[string]interface{} {
 	paramMap := make(map[string]interface{})
@@ -389,6 +396,9 @@ func (req *AlibabaAlihealthDrugtraceTopYljgUploadinoutbillRequest) ToMap() map[s
 	}
 	if req.AssEntId != nil {
 		paramMap["ass_ent_id"] = *req.AssEntId
+	}
+	if req.IgnorePartSuccessFlag != nil {
+		paramMap["ignore_part_success_flag"] = *req.IgnorePartSuccessFlag
 	}
 	return paramMap
 }

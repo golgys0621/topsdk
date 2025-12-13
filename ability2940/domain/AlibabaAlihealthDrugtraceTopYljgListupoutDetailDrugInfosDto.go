@@ -35,11 +35,11 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutDetailDrugInfosDto struct {
     ProduceBatchNo  *string `json:"produce_batch_no,omitempty" `
 
     /*
-        药品标识     */
+        药品标识-药品id     */
     ProdSeqNo  *string `json:"prod_seq_no,omitempty" `
 
     /*
-        药品标识     */
+        药品标识-药品id     */
     DrugEntBaseInfoId  *string `json:"drug_ent_base_info_id,omitempty" `
 
     /*

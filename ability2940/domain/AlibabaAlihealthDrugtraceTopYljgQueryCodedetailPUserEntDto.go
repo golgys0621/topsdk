@@ -3,11 +3,11 @@ package domain
 
 type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailPUserEntDto struct {
     /*
-        生产企业entid，不是refentid     */
+        企业id     */
     RefEntId  *string `json:"ref_ent_id,omitempty" `
 
     /*
-        生产企业名称     */
+        企业名称     */
     EntName  *string `json:"ent_name,omitempty" `
 
 }

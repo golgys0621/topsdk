@@ -62,6 +62,14 @@ type AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto struct {
         药品类型     */
     PhysicType  *string `json:"physic_type,omitempty" `
 
+    /*
+        生产日期     */
+    OriginalProduceDate  *string `json:"original_produce_date,omitempty" `
+
+    /*
+        有效期至     */
+    OriginalExpireDate  *string `json:"original_expire_date,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto) SetPhysicInfo(v string) *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto {
@@ -122,5 +130,13 @@ func (s *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto) SetApproveNo(
 }
 func (s *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto) SetPhysicType(v string) *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto {
     s.PhysicType = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto) SetOriginalProduceDate(v string) *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto {
+    s.OriginalProduceDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto) SetOriginalExpireDate(v string) *AlibabaAlihealthDrugtraceTopYljgQueryRelationBaseInfoDto {
+    s.OriginalExpireDate = &v
     return s
 }

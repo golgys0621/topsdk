@@ -42,6 +42,14 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto struct {
         药品信息数据     */
     DrugInfosDtoList  *[]AlibabaAlihealthDrugtraceTopYljgListupoutDetailDrugInfosDto `json:"drug_infos_dto_list,omitempty" `
 
+    /*
+        委托企业名称     */
+    AssUserName  *string `json:"ass_user_name,omitempty" `
+
+    /*
+        委托企业refEntId     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetBillCode(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
@@ -82,5 +90,13 @@ func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetU
 }
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetDrugInfosDtoList(v []AlibabaAlihealthDrugtraceTopYljgListupoutDetailDrugInfosDto) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
     s.DrugInfosDtoList = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetAssUserName(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
+    s.AssUserName = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetAssRefEntId(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
+    s.AssRefEntId = &v
     return s
 }
