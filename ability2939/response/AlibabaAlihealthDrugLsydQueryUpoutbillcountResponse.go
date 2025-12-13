@@ -4,7 +4,7 @@ import (
 	"github.com/golgys0621/topsdk/ability2939/domain"
 )
 
-type AlibabaAlihealthDrugtraceTopLsydQueryBillstatusResponse struct {
+type AlibabaAlihealthDrugLsydQueryUpoutbillcountResponse struct {
 
 	/*
 	   System request id
@@ -19,5 +19,5 @@ type AlibabaAlihealthDrugtraceTopLsydQueryBillstatusResponse struct {
 	/*
 	   监控宝推送网站监控信息，返回结果
 	*/
-	Result domain.AlibabaAlihealthDrugtraceTopLsydQueryBillstatusResultModel `json:"result,omitempty" `
+	Result domain.AlibabaAlihealthDrugLsydQueryUpoutbillcountResultModel `json:"result,omitempty" `
 }

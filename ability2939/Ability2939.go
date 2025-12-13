@@ -4,10 +4,10 @@ import (
 	"errors"
 	"log"
 
-	"github.com/LGYS07/topsdk"
-	"github.com/LGYS07/topsdk/ability2939/request"
-	"github.com/LGYS07/topsdk/ability2939/response"
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk"
+	"github.com/golgys0621/topsdk/ability2939/request"
+	"github.com/golgys0621/topsdk/ability2939/response"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type Ability2939 struct {
@@ -59,7 +59,7 @@ func (ability *Ability2939) AlibabaAlihealthDrugtraceTopLsydListupout(req *reque
 }
 
 /*
-获取企业信息
+由于无法返回多条匹配信息，本接口已不再推荐使用，推荐使用新接口，新接口名称：alibaba.alihealth.drug.lsyd.getentinfolist
 */
 func (ability *Ability2939) AlibabaAlihealthDrugLsydGetentinfonew(req *request.AlibabaAlihealthDrugLsydGetentinfonewRequest) (*response.AlibabaAlihealthDrugLsydGetentinfonewResponse, error) {
 	if ability.Client == nil {
@@ -109,6 +109,46 @@ func (ability *Ability2939) AlibabaAlihealthDrugtraceTopLsydServiceGetenddate(re
 	var respStruct = response.AlibabaAlihealthDrugtraceTopLsydServiceGetenddateResponse{}
 	if err != nil {
 		log.Println("alibabaAlihealthDrugtraceTopLsydServiceGetenddate error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+通过时间段批量查询入出库单信息
+*/
+func (ability *Ability2939) AlibabaAlihealthDrugLsydSearchbill(req *request.AlibabaAlihealthDrugLsydSearchbillRequest) (*response.AlibabaAlihealthDrugLsydSearchbillResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Ability2939 topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.lsyd.searchbill", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugLsydSearchbillResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugLsydSearchbill error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+企业信息-根据企业名称或证号查询企业信息列表
+*/
+func (ability *Ability2939) AlibabaAlihealthDrugLsydGetentinfolist(req *request.AlibabaAlihealthDrugLsydGetentinfolistRequest) (*response.AlibabaAlihealthDrugLsydGetentinfolistResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Ability2939 topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.lsyd.getentinfolist", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugLsydGetentinfolistResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugLsydGetentinfolist error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -259,7 +299,7 @@ func (ability *Ability2939) AlibabaAlihealthDrugtraceTopLsydQueryCodedetail(req 
 }
 
 /*
-【准备停止使用】该接口无法返回多条同名的企业信息，请对接同权限包下的“alibaba.alihealth.drug.lsyd.getentinfonew”接口。通过企业名得到唯一标识ref_ent_id及企业ent_id
+由于无法返回多条匹配信息，本接口已不再推荐使用，推荐使用新接口，新接口名称：alibaba.alihealth.drug.lsyd.getentinfolist
 */
 func (ability *Ability2939) AlibabaAlihealthDrugtraceTopLsydQueryGetentinfo(req *request.AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoRequest) (*response.AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoResponse, error) {
 	if ability.Client == nil {
@@ -269,6 +309,66 @@ func (ability *Ability2939) AlibabaAlihealthDrugtraceTopLsydQueryGetentinfo(req 
 	var respStruct = response.AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoResponse{}
 	if err != nil {
 		log.Println("alibabaAlihealthDrugtraceTopLsydQueryGetentinfo error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询本企业出入库单数量
+*/
+func (ability *Ability2939) AlibabaAlihealthDrugLsydQueryBillcount(req *request.AlibabaAlihealthDrugLsydQueryBillcountRequest) (*response.AlibabaAlihealthDrugLsydQueryBillcountResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Ability2939 topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.lsyd.query.billcount", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugLsydQueryBillcountResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugLsydQueryBillcount error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询上游出库单数量
+*/
+func (ability *Ability2939) AlibabaAlihealthDrugLsydQueryUpoutbillcount(req *request.AlibabaAlihealthDrugLsydQueryUpoutbillcountRequest) (*response.AlibabaAlihealthDrugLsydQueryUpoutbillcountResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Ability2939 topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.lsyd.query.upoutbillcount", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugLsydQueryUpoutbillcountResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugLsydQueryUpoutbillcount error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+部分处理成功单据处理失败的码明细
+*/
+func (ability *Ability2939) AlibabaAlihealthDrugtraceTopLsydListbillprocesspartsuccess(req *request.AlibabaAlihealthDrugtraceTopLsydListbillprocesspartsuccessRequest) (*response.AlibabaAlihealthDrugtraceTopLsydListbillprocesspartsuccessResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Ability2939 topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drugtrace.top.lsyd.listbillprocesspartsuccess", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugtraceTopLsydListbillprocesspartsuccessResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugtraceTopLsydListbillprocesspartsuccess error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
