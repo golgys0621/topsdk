@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/LGYS07/topsdk/ability2940/domain"
+	"github.com/golgys0621/topsdk/ability2940/domain"
 )
 
 type AlibabaAlihealthDrugtraceTopYljgGetdruglistResponse struct {
