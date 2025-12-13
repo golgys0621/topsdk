@@ -4,10 +4,10 @@ import (
 	"errors"
 	"log"
 
-	"github.com/LGYS07/topsdk"
-	"github.com/LGYS07/topsdk/defaultability/request"
-	"github.com/LGYS07/topsdk/defaultability/response"
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk"
+	"github.com/golgys0621/topsdk/defaultability/request"
+	"github.com/golgys0621/topsdk/defaultability/response"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type Defaultability struct {
@@ -16,6 +16,706 @@ type Defaultability struct {
 
 func NewDefaultability(client *topsdk.TopClient) *Defaultability {
 	return &Defaultability{client}
+}
+
+/*
+查询上传报告信息接口
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQuerysealdrugreport(req *request.AlibabaAlihealthSynergyYzwQuerysealdrugreportRequest) (*response.AlibabaAlihealthSynergyYzwQuerysealdrugreportResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.querysealdrugreport", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQuerysealdrugreportResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQuerysealdrugreport error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询批量上传药检报告ocr状态
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwGetdrugreportwithocrstatus(req *request.AlibabaAlihealthSynergyYzwGetdrugreportwithocrstatusRequest) (*response.AlibabaAlihealthSynergyYzwGetdrugreportwithocrstatusResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.getdrugreportwithocrstatus", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwGetdrugreportwithocrstatusResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwGetdrugreportwithocrstatus error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+通过文件保存一张网药检报告，支持委托企业代授权企业上传
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportByfileSave(req *request.AlibabaAlihealthSynergyYzwDrugreportByfileSaveRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportByfileSaveResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.byfile.save", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportByfileSaveResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportByfileSave error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+药检报告的签章接口
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportSeal(req *request.AlibabaAlihealthSynergyYzwDrugreportSealRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportSealResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.seal", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportSealResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportSeal error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+码上传权限包有效期查询
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscServiceinfo(req *request.AlibabaAlihealthDrugMscServiceinfoRequest) (*response.AlibabaAlihealthDrugMscServiceinfoResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.serviceinfo", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscServiceinfoResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscServiceinfo error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+对药检报告盖章，支持委托企业代授权企业盖章
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportAssSeal(req *request.AlibabaAlihealthSynergyYzwDrugreportAssSealRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportAssSealResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.ass.seal", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportAssSealResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportAssSeal error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询企业是否上传过药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthEntYzwHasuploaddrugreport(req *request.AlibabaAlihealthEntYzwHasuploaddrugreportRequest) (*response.AlibabaAlihealthEntYzwHasuploaddrugreportResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.ent.yzw.hasuploaddrugreport", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthEntYzwHasuploaddrugreportResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthEntYzwHasuploaddrugreport error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查看通过http方式保存药检报告状态
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwGetdrugreportwithhttpstatus(req *request.AlibabaAlihealthSynergyYzwGetdrugreportwithhttpstatusRequest) (*response.AlibabaAlihealthSynergyYzwGetdrugreportwithhttpstatusResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.getdrugreportwithhttpstatus", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwGetdrugreportwithhttpstatusResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwGetdrugreportwithhttpstatus error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+一张网报告操作日志
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportOptHistoryAll(req *request.AlibabaAlihealthSynergyYzwDrugreportOptHistoryAllRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportOptHistoryAllResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.opt.history.all", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportOptHistoryAllResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportOptHistoryAll error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+通过http方式上传药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwSavedrugreportbyhttp(req *request.AlibabaAlihealthSynergyYzwSavedrugreportbyhttpRequest) (*response.AlibabaAlihealthSynergyYzwSavedrugreportbyhttpResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.savedrugreportbyhttp", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwSavedrugreportbyhttpResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwSavedrugreportbyhttp error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询上游企业的待签收药检报告信息
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQuerydrugreport(req *request.AlibabaAlihealthSynergyYzwQuerydrugreportRequest) (*response.AlibabaAlihealthSynergyYzwQuerydrugreportResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.querydrugreport", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQuerydrugreportResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQuerydrugreport error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询委托上传的报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQueryassdrugreportinfo(req *request.AlibabaAlihealthSynergyYzwQueryassdrugreportinfoRequest) (*response.AlibabaAlihealthSynergyYzwQueryassdrugreportinfoResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.queryassdrugreportinfo", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQueryassdrugreportinfoResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQueryassdrugreportinfo error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+由于无法返回多条匹配信息，本接口已不再推荐使用，推荐使用新接口，新接口名称：alibaba.alihealth.drug.msc.getentinfolist
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscGetentinfonew(req *request.AlibabaAlihealthDrugMscGetentinfonewRequest) (*response.AlibabaAlihealthDrugMscGetentinfonewResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.getentinfonew", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscGetentinfonewResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscGetentinfonew error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询入库单据详情以及码
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscBillinDetailwithcode(req *request.AlibabaAlihealthDrugMscBillinDetailwithcodeRequest) (*response.AlibabaAlihealthDrugMscBillinDetailwithcodeResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.billin.detailwithcode", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscBillinDetailwithcodeResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscBillinDetailwithcode error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+批发企业签收并盖章和拒收药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportOpt(req *request.AlibabaAlihealthSynergyYzwDrugreportOptRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportOptResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.opt", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportOptResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportOpt error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询药检报告签章信息
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportGet(req *request.AlibabaAlihealthSynergyYzwDrugreportGetRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportGetResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.get", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportGetResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportGet error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+企业信息-根据企业名称或证号查询企业信息列表
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscGetentinfolist(req *request.AlibabaAlihealthDrugMscGetentinfolistRequest) (*response.AlibabaAlihealthDrugMscGetentinfolistResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.getentinfolist", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscGetentinfolistResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscGetentinfolist error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询一段时间内已经签收的单据
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwBillSignedQuery(req *request.AlibabaAlihealthSynergyYzwBillSignedQueryRequest) (*response.AlibabaAlihealthSynergyYzwBillSignedQueryResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.bill.signed.query", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwBillSignedQueryResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwBillSignedQuery error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询企业质检章
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwListseals(req *request.AlibabaAlihealthSynergyYzwListsealsRequest) (*response.AlibabaAlihealthSynergyYzwListsealsResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.listseals", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwListsealsResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwListseals error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+异常码详情列表
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMyjCodewarnCodewarninginfodetaillist(req *request.AlibabaAlihealthDrugMyjCodewarnCodewarninginfodetaillistRequest) (*response.AlibabaAlihealthDrugMyjCodewarnCodewarninginfodetaillistResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.myj.codewarn.codewarninginfodetaillist", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMyjCodewarnCodewarninginfodetaillistResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMyjCodewarnCodewarninginfodetaillist error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+码预警列表
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMyjCodewarnCodewarninglist(req *request.AlibabaAlihealthDrugMyjCodewarnCodewarninglistRequest) (*response.AlibabaAlihealthDrugMyjCodewarnCodewarninglistResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.myj.codewarn.codewarninglist", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMyjCodewarnCodewarninglistResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMyjCodewarnCodewarninglist error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询待签收企业
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQueryunsignents(req *request.AlibabaAlihealthSynergyYzwQueryunsignentsRequest) (*response.AlibabaAlihealthSynergyYzwQueryunsignentsResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.queryunsignents", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQueryunsignentsResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQueryunsignents error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+生成码预警任务
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMyjCodewarnCreatecodewarntask(req *request.AlibabaAlihealthDrugMyjCodewarnCreatecodewarntaskRequest) (*response.AlibabaAlihealthDrugMyjCodewarnCreatecodewarntaskResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.myj.codewarn.createcodewarntask", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMyjCodewarnCreatecodewarntaskResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMyjCodewarnCreatecodewarntask error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+保存药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwSavedrugreport(req *request.AlibabaAlihealthSynergyYzwSavedrugreportRequest) (*response.AlibabaAlihealthSynergyYzwSavedrugreportResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.savedrugreport", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwSavedrugreportResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwSavedrugreport error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+企业搜索自己授权的物流企业
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscListauths(req *request.AlibabaAlihealthDrugMscListauthsRequest) (*response.AlibabaAlihealthDrugMscListauthsResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.listauths", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscListauthsResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscListauths error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+根据报告id或药品批次或药品和报告创建时间区间查询药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQuerydrugbatchreport(req *request.AlibabaAlihealthSynergyYzwQuerydrugbatchreportRequest) (*response.AlibabaAlihealthSynergyYzwQuerydrugbatchreportResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.querydrugbatchreport", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQuerydrugbatchreportResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQuerydrugbatchreport error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+药检报告删除
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDeletedrugreport(req *request.AlibabaAlihealthSynergyYzwDeletedrugreportRequest) (*response.AlibabaAlihealthSynergyYzwDeletedrugreportResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.deletedrugreport", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDeletedrugreportResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDeletedrugreport error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+本地分批上传文件
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwSavedatabucket(req *request.AlibabaAlihealthSynergyYzwSavedatabucketRequest) (*response.AlibabaAlihealthSynergyYzwSavedatabucketResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.savedatabucket", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwSavedatabucketResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwSavedatabucket error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询上游出库单数量
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscQueryUpoutbillcount(req *request.AlibabaAlihealthDrugMscQueryUpoutbillcountRequest) (*response.AlibabaAlihealthDrugMscQueryUpoutbillcountResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.query.upoutbillcount", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscQueryUpoutbillcountResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscQueryUpoutbillcount error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+同步获取码预警信息
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMyjCodewarnGetwarninfo(req *request.AlibabaAlihealthDrugMyjCodewarnGetwarninfoRequest) (*response.AlibabaAlihealthDrugMyjCodewarnGetwarninfoResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.myj.codewarn.getwarninfo", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMyjCodewarnGetwarninfoResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMyjCodewarnGetwarninfo error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询本企业出入库单数量
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscQueryBillcount(req *request.AlibabaAlihealthDrugMscQueryBillcountRequest) (*response.AlibabaAlihealthDrugMscQueryBillcountResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.query.billcount", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscQueryBillcountResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscQueryBillcount error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询企业信息
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwGetentinfolist(req *request.AlibabaAlihealthSynergyYzwGetentinfolistRequest) (*response.AlibabaAlihealthSynergyYzwGetentinfolistResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.getentinfolist", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwGetentinfolistResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwGetentinfolist error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询授权企业的药品信息
+*/
+func (ability *Defaultability) AlibabaAlihealthEntYzwAuthGetdruginfo(req *request.AlibabaAlihealthEntYzwAuthGetdruginfoRequest) (*response.AlibabaAlihealthEntYzwAuthGetdruginfoResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.ent.yzw.auth.getdruginfo", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthEntYzwAuthGetdruginfoResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthEntYzwAuthGetdruginfo error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+企业创建我的药检报告，支持2个印章
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportByfileSaveSelf(req *request.AlibabaAlihealthSynergyYzwDrugreportByfileSaveSelfRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportByfileSaveSelfResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.byfile.save.self", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportByfileSaveSelfResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportByfileSaveSelf error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+部分处理成功单据处理失败的码明细
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugMscListbillprocesspartsuccess(req *request.AlibabaAlihealthDrugMscListbillprocesspartsuccessRequest) (*response.AlibabaAlihealthDrugMscListbillprocesspartsuccessResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.listbillprocesspartsuccess", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugMscListbillprocesspartsuccessResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugMscListbillprocesspartsuccess error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
 }
 
 /*
@@ -119,26 +819,6 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscBillSearchstatus(req *requ
 }
 
 /*
-获取企业信息
-*/
-func (ability *Defaultability) AlibabaAlihealthDrugMscGetentinfonew(req *request.AlibabaAlihealthDrugMscGetentinfonewRequest) (*response.AlibabaAlihealthDrugMscGetentinfonewResponse, error) {
-	if ability.Client == nil {
-		return nil, errors.New("Defaultability topClient is nil")
-	}
-	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.getentinfonew", req.ToMap(), req.ToFileMap())
-	var respStruct = response.AlibabaAlihealthDrugMscGetentinfonewResponse{}
-	if err != nil {
-		log.Println("alibabaAlihealthDrugMscGetentinfonew error", err)
-		return &respStruct, err
-	}
-	err = util.HandleJsonResponse(jsonStr, &respStruct)
-	if respStruct.Body == "" || len(respStruct.Body) == 0 {
-		respStruct.Body = jsonStr
-	}
-	return &respStruct, err
-}
-
-/*
 新增往来单位企业
 */
 func (ability *Defaultability) AlibabaAlihealthDrugMscSaveent(req *request.AlibabaAlihealthDrugMscSaveentRequest) (*response.AlibabaAlihealthDrugMscSaveentResponse, error) {
@@ -159,7 +839,7 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscSaveent(req *request.Aliba
 }
 
 /*
-【准备停止使用】该接口无法返回多条同名的企业信息，请对接同权限包下的“alibaba.alihealth.drug.msc.getentinfonew”接口。根据企业名称查询企业唯一标识【ref_ent_id】和企业ID【ent_id】
+由于无法返回多条匹配信息，本接口已不再推荐使用，推荐使用新接口，新接口名称：alibaba.alihealth.drug.msc.getentinfolist
 */
 func (ability *Defaultability) AlibabaAlihealthDrugMscGetentinfo(req *request.AlibabaAlihealthDrugMscGetentinfoRequest) (*response.AlibabaAlihealthDrugMscGetentinfoResponse, error) {
 	if ability.Client == nil {
@@ -169,6 +849,26 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscGetentinfo(req *request.Al
 	var respStruct = response.AlibabaAlihealthDrugMscGetentinfoResponse{}
 	if err != nil {
 		log.Println("alibabaAlihealthDrugMscGetentinfo error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询上游出库单
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQuerydrugreportass(req *request.AlibabaAlihealthSynergyYzwQuerydrugreportassRequest) (*response.AlibabaAlihealthSynergyYzwQuerydrugreportassResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.querydrugreportass", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQuerydrugreportassResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQuerydrugreportass error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -199,16 +899,16 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscListparts(req *request.Ali
 }
 
 /*
-查询入库单据详情以及码
+查询企业质检章，支持委托企业
 */
-func (ability *Defaultability) AlibabaAlihealthDrugMscBillinDetailwithcode(req *request.AlibabaAlihealthDrugMscBillinDetailwithcodeRequest) (*response.AlibabaAlihealthDrugMscBillinDetailwithcodeResponse, error) {
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwListsealass(req *request.AlibabaAlihealthSynergyYzwListsealassRequest) (*response.AlibabaAlihealthSynergyYzwListsealassResponse, error) {
 	if ability.Client == nil {
 		return nil, errors.New("Defaultability topClient is nil")
 	}
-	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.msc.billin.detailwithcode", req.ToMap(), req.ToFileMap())
-	var respStruct = response.AlibabaAlihealthDrugMscBillinDetailwithcodeResponse{}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.listsealass", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwListsealassResponse{}
 	if err != nil {
-		log.Println("alibabaAlihealthDrugMscBillinDetailwithcode error", err)
+		log.Println("alibabaAlihealthSynergyYzwListsealass error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -229,6 +929,26 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscGetbyrefentid(req *request
 	var respStruct = response.AlibabaAlihealthDrugMscGetbyrefentidResponse{}
 	if err != nil {
 		log.Println("alibabaAlihealthDrugMscGetbyrefentid error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询已经签收但是还未盖章的单据
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwSignednotstampedbillQuery(req *request.AlibabaAlihealthSynergyYzwSignednotstampedbillQueryRequest) (*response.AlibabaAlihealthSynergyYzwSignednotstampedbillQueryResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.signednotstampedbill.query", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwSignednotstampedbillQueryResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwSignednotstampedbillQuery error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -279,6 +999,86 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscGetbyentid(req *request.Al
 }
 
 /*
+代授权单位操作药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDrugreportOptByagent(req *request.AlibabaAlihealthSynergyYzwDrugreportOptByagentRequest) (*response.AlibabaAlihealthSynergyYzwDrugreportOptByagentResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.drugreport.opt.byagent", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDrugreportOptByagentResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDrugreportOptByagent error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+通过http方式保存药检报告,支持委托企业
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwSavedrugreportbyhttpass(req *request.AlibabaAlihealthSynergyYzwSavedrugreportbyhttpassRequest) (*response.AlibabaAlihealthSynergyYzwSavedrugreportbyhttpassResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.savedrugreportbyhttpass", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwSavedrugreportbyhttpassResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwSavedrugreportbyhttpass error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+一张网查询药品信息
+*/
+func (ability *Defaultability) AlibabaAlihealthDrugYzwDrugtable(req *request.AlibabaAlihealthDrugYzwDrugtableRequest) (*response.AlibabaAlihealthDrugYzwDrugtableResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.drug.yzw.drugtable", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthDrugYzwDrugtableResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthDrugYzwDrugtable error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询药品id
+*/
+func (ability *Defaultability) AlibabaAlihealthEntYzwGetdrugidbyprodcode(req *request.AlibabaAlihealthEntYzwGetdrugidbyprodcodeRequest) (*response.AlibabaAlihealthEntYzwGetdrugidbyprodcodeResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.ent.yzw.getdrugidbyprodcode", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthEntYzwGetdrugidbyprodcodeResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthEntYzwGetdrugidbyprodcode error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
 企业上传出入库信息
 */
 func (ability *Defaultability) AlibabaAlihealthDrugMscUploadinoutbill(req *request.AlibabaAlihealthDrugMscUploadinoutbillRequest) (*response.AlibabaAlihealthDrugMscUploadinoutbillResponse, error) {
@@ -319,6 +1119,26 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscBilloutDetailwithcodes(req
 }
 
 /*
+根据码查询上游药检报告
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwQueryreportbycode(req *request.AlibabaAlihealthSynergyYzwQueryreportbycodeRequest) (*response.AlibabaAlihealthSynergyYzwQueryreportbycodeResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.queryreportbycode", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwQueryreportbycodeResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwQueryreportbycode error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
 查询药品目录信息
 */
 func (ability *Defaultability) AlibabaAlihealthDrugMscDrugtable(req *request.AlibabaAlihealthDrugMscDrugtableRequest) (*response.AlibabaAlihealthDrugMscDrugtableResponse, error) {
@@ -329,6 +1149,46 @@ func (ability *Defaultability) AlibabaAlihealthDrugMscDrugtable(req *request.Ali
 	var respStruct = response.AlibabaAlihealthDrugMscDrugtableResponse{}
 	if err != nil {
 		log.Println("alibabaAlihealthDrugMscDrugtable error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+批量上传药检报告OCR
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwSavedrugreportwithocr(req *request.AlibabaAlihealthSynergyYzwSavedrugreportwithocrRequest) (*response.AlibabaAlihealthSynergyYzwSavedrugreportwithocrResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.savedrugreportwithocr", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwSavedrugreportwithocrResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwSavedrugreportwithocr error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
+
+/*
+查询一张网药品信息通过mah、生产企业和批次号
+*/
+func (ability *Defaultability) AlibabaAlihealthSynergyYzwDruginfoQuery(req *request.AlibabaAlihealthSynergyYzwDruginfoQueryRequest) (*response.AlibabaAlihealthSynergyYzwDruginfoQueryResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("alibaba.alihealth.synergy.yzw.druginfo.query", req.ToMap(), req.ToFileMap())
+	var respStruct = response.AlibabaAlihealthSynergyYzwDruginfoQueryResponse{}
+	if err != nil {
+		log.Println("alibabaAlihealthSynergyYzwDruginfoQuery error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

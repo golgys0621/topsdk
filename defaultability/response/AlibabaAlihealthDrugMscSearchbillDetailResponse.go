@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/LGYS07/topsdk/defaultability/domain"
+	"github.com/golgys0621/topsdk/defaultability/domain"
 )
 
 type AlibabaAlihealthDrugMscSearchbillDetailResponse struct {

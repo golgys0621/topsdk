@@ -4,7 +4,7 @@ import (
 	"github.com/golgys0621/topsdk/defaultability/domain"
 )
 
-type AlibabaAlihealthDrugMscGetentinfonewResponse struct {
+type AlibabaAlihealthDrugMscGetentinfolistResponse struct {
 
 	/*
 	   System request id
@@ -19,5 +19,5 @@ type AlibabaAlihealthDrugMscGetentinfonewResponse struct {
 	/*
 	   resultModel
 	*/
-	Result domain.AlibabaAlihealthDrugMscGetentinfonewResultModel `json:"result,omitempty" `
+	Result domain.AlibabaAlihealthDrugMscGetentinfolistResultModel `json:"result,omitempty" `
 }
