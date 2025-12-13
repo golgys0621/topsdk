@@ -3,7 +3,7 @@ package domain
 
 type AlibabaAlihealthDrugMscListpartsPEntParDTO struct {
     /*
-        往来单位自定义编码     */
+        往来单位ID：企业自定义编号     */
     PartnerId  *string `json:"partner_id,omitempty" `
 
     /*
@@ -11,11 +11,11 @@ type AlibabaAlihealthDrugMscListpartsPEntParDTO struct {
     PartnerName  *string `json:"partner_name,omitempty" `
 
     /*
-        企业id     */
+        企业id：废弃字段     */
     EntId  *string `json:"ent_id,omitempty" `
 
     /*
-        查询企业的唯一标识     */
+        调用企业唯一标识     */
     RefEntId  *string `json:"ref_ent_id,omitempty" `
 
     /*
@@ -23,43 +23,43 @@ type AlibabaAlihealthDrugMscListpartsPEntParDTO struct {
     EntProvCode  *string `json:"ent_prov_code,omitempty" `
 
     /*
-        所在省     */
+        往来单位所在省     */
     ProvName  *string `json:"prov_name,omitempty" `
 
     /*
-        所在市     */
+        往来单位所在市     */
     AreaName  *string `json:"area_name,omitempty" `
 
     /*
-        所在县     */
+        往来单位所在县     */
     CityName  *string `json:"city_name,omitempty" `
 
     /*
-        是不是入网企业[1代表入网企业，其它为非入网]     */
+        是不是入网企业：1-是；0-不是     */
     IsNetwork  *string `json:"is_network,omitempty" `
 
     /*
-        拼音缩写     */
+        往来单位拼音缩写     */
     PartnerCapitalName  *string `json:"partner_capital_name,omitempty" `
 
     /*
-        企业类型（1: 生产企业  2: 批发企业  3: 医疗机构  4: 零售企业  5: 物流企业  7: 上市许可持有人  8: 中央随机化系统提供商  110: 政府系统)     */
+        往来单位类型     */
     PartnerType  *string `json:"partner_type,omitempty" `
 
     /*
-        往来单位企业id【单据上传时的收发货企业填的就这个字段】     */
+        往来单位企业entId     */
     PartnerEntId  *string `json:"partner_ent_id,omitempty" `
 
     /*
-        最近修改日期     */
+        往来单位最近修改日期     */
     LastModDate  *string `json:"last_mod_date,omitempty" `
 
     /*
-        创建日期     */
+        添加到本企业往来单位列表日期     */
     CrtDate  *string `json:"crt_date,omitempty" `
 
     /*
-        创建IC名称     */
+        创建IC名称：废弃字段     */
     CrtIcName  *string `json:"crt_ic_name,omitempty" `
 
     /*
@@ -67,24 +67,40 @@ type AlibabaAlihealthDrugMscListpartsPEntParDTO struct {
     Status  *string `json:"status,omitempty" `
 
     /*
-        修改IC名称     */
+        修改IC名称：废弃字段     */
     ModIcName  *string `json:"mod_ic_name,omitempty" `
 
     /*
-        级别     */
+        级别：废弃字段     */
     PartnerLevel  *string `json:"partner_level,omitempty" `
 
     /*
-        修改IC码     */
+        修改IC码：废弃字段     */
     ModIcCode  *string `json:"mod_ic_code,omitempty" `
 
     /*
-        合作ID     */
+        记录ID     */
     PEntParId  *string `json:"p_ent_par_id,omitempty" `
 
     /*
-        创建IC码     */
+        创建IC码：废弃字段     */
     CrtIcCode  *string `json:"crt_ic_code,omitempty" `
+
+    /*
+        往来单位企业refEntId     */
+    ParRefEntId  *string `json:"par_ref_ent_id,omitempty" `
+
+    /*
+        往来单位审核状态：0-审核中；1-审核通过；2-审核不通过     */
+    AuditFlag  *string `json:"audit_flag,omitempty" `
+
+    /*
+        往来单位企业类型描述     */
+    PartnerTypeDesc  *string `json:"partner_type_desc,omitempty" `
+
+    /*
+        扩展属性     */
+    EntExtend  *AlibabaAlihealthDrugMscListpartsEntExtend `json:"ent_extend,omitempty" `
 
 }
 
@@ -170,5 +186,21 @@ func (s *AlibabaAlihealthDrugMscListpartsPEntParDTO) SetPEntParId(v string) *Ali
 }
 func (s *AlibabaAlihealthDrugMscListpartsPEntParDTO) SetCrtIcCode(v string) *AlibabaAlihealthDrugMscListpartsPEntParDTO {
     s.CrtIcCode = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscListpartsPEntParDTO) SetParRefEntId(v string) *AlibabaAlihealthDrugMscListpartsPEntParDTO {
+    s.ParRefEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscListpartsPEntParDTO) SetAuditFlag(v string) *AlibabaAlihealthDrugMscListpartsPEntParDTO {
+    s.AuditFlag = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscListpartsPEntParDTO) SetPartnerTypeDesc(v string) *AlibabaAlihealthDrugMscListpartsPEntParDTO {
+    s.PartnerTypeDesc = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscListpartsPEntParDTO) SetEntExtend(v AlibabaAlihealthDrugMscListpartsEntExtend) *AlibabaAlihealthDrugMscListpartsPEntParDTO {
+    s.EntExtend = &v
     return s
 }

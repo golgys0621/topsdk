@@ -14,6 +14,10 @@ type AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist struct {
         父码     */
     ParentCode  *string `json:"parent_code,omitempty" `
 
+    /*
+        是否有父码     */
+    HasParentCode  *string `json:"has_parent_code,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist) SetCode(v string) *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist {
@@ -26,5 +30,9 @@ func (s *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist) SetCode
 }
 func (s *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist) SetParentCode(v string) *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist {
     s.ParentCode = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist) SetHasParentCode(v string) *AlibabaAlihealthDrugMscBilloutDetailwithcodesCodeandparentlist {
+    s.HasParentCode = &v
     return s
 }

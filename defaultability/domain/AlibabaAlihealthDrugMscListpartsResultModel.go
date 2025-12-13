@@ -7,7 +7,7 @@ type AlibabaAlihealthDrugMscListpartsResultModel struct {
     ResponseSuccess  *bool `json:"response_success,omitempty" `
 
     /*
-        返回对象     */
+        仅代表本次查询返回的记录数，小于等于page_size时，可根据需要继续请求下一页     */
     Model  *AlibabaAlihealthDrugMscListpartsPage `json:"model,omitempty" `
 
     /*

@@ -15,6 +15,10 @@ type AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO struct {
     NetworkType  *string `json:"network_type,omitempty" `
 
     /*
+        拓展属性     */
+    EntExtend  *AlibabaAlihealthDrugMscGetentinfoEntExtend `json:"ent_extend,omitempty" `
+
+    /*
         1-审核通过，0-审核中，2-审核不通过     */
     AuditStatus  *string `json:"audit_status,omitempty" `
 
@@ -30,6 +34,10 @@ func (s *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO) SetEntId(v string) *A
 }
 func (s *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO) SetNetworkType(v string) *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO {
     s.NetworkType = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO) SetEntExtend(v AlibabaAlihealthDrugMscGetentinfoEntExtend) *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO {
+    s.EntExtend = &v
     return s
 }
 func (s *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO) SetAuditStatus(v string) *AlibabaAlihealthDrugMscGetentinfoPUserEntInfoDTO {
