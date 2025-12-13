@@ -1,3 +1,3 @@
-module github.com/LGYS07/topsdk
+module github.com/golgys0621/topsdk
 
-go 1.24
+go 1.25

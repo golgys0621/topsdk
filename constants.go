@@ -5,7 +5,7 @@ package topsdk
  */
 const (
 	// SdkVersion 版本号
-	SdkVersion = "new_go_sdk_20250711"
+	SdkVersion = "new_go_sdk_20251213"
 
 	// ApiFormat api格式
 	ApiFormat = "json"
