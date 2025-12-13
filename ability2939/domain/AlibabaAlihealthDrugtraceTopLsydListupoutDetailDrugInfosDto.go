@@ -82,6 +82,10 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto struct {
         包装单位描述     */
     PkgUnitDesc  *string `json:"pkg_unit_desc,omitempty" `
 
+    /*
+        国家药监局药品唯一码     */
+    CfdaDrugId  *string `json:"cfda_drug_id,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto) SetProduceDate(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto {
@@ -162,5 +166,9 @@ func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto) SetCodeInf
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto) SetPkgUnitDesc(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto {
     s.PkgUnitDesc = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto) SetCfdaDrugId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto {
+    s.CfdaDrugId = &v
     return s
 }

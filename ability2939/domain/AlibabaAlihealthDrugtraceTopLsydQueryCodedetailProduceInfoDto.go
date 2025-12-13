@@ -18,6 +18,14 @@ type AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto struct {
         批次号     */
     BatchNo  *string `json:"batch_no,omitempty" `
 
+    /*
+        生产日期     */
+    OriginalProduceDate  *string `json:"original_produce_date,omitempty" `
+
+    /*
+        有效期     */
+    OriginalExpireDate  *string `json:"original_expire_date,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto) SetProduceDateStr(v string) *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto {
@@ -34,5 +42,13 @@ func (s *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto) SetExpir
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto) SetBatchNo(v string) *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto {
     s.BatchNo = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto) SetOriginalProduceDate(v string) *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto {
+    s.OriginalProduceDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto) SetOriginalExpireDate(v string) *AlibabaAlihealthDrugtraceTopLsydQueryCodedetailProduceInfoDto {
+    s.OriginalExpireDate = &v
     return s
 }

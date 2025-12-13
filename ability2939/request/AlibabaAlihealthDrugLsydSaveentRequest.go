@@ -1,8 +1,8 @@
 package request
 
 import (
-	"github.com/LGYS07/topsdk/ability2939/domain"
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/ability2939/domain"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugLsydSaveentRequest struct {

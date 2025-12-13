@@ -15,7 +15,7 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutDetailCodeInfoListDto struct {
     PkgAmount  *string `json:"pkg_amount,omitempty" `
 
     /*
-        监管码级别     */
+        码等级【1代表最小码 如：申请的包装比例是1:5:10, 对应的码等级就是3、2、1, 代表大码、中码、小码】     */
     CodeLevel  *string `json:"code_level,omitempty" `
 
     /*

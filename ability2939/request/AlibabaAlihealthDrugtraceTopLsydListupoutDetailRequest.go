@@ -14,6 +14,9 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest struct {
     /*
         收货企业refEntId     */
     ToRefUserId  *string `json:"to_ref_user_id" required:"true" `
+    /*
+        委托企业Id     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" required:"false" `
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest) SetRefEntId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest {
@@ -32,6 +35,10 @@ func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest) SetToRefUserId(
     s.ToRefUserId = &v
     return s
 }
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest) SetAssRefEntId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest {
+    s.AssRefEntId = &v
+    return s
+}
 
 func (req *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest) ToMap() map[string]interface{} {
     paramMap := make(map[string]interface{})
@@ -46,6 +53,9 @@ func (req *AlibabaAlihealthDrugtraceTopLsydListupoutDetailRequest) ToMap() map[s
     }
     if(req.ToRefUserId != nil) {
         paramMap["to_ref_user_id"] = *req.ToRefUserId
+    }
+    if(req.AssRefEntId != nil) {
+        paramMap["ass_ref_ent_id"] = *req.AssRefEntId
     }
     return paramMap
 }

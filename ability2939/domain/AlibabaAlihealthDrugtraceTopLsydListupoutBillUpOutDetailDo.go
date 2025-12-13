@@ -110,6 +110,18 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo struct {
         发货企业ent_id     */
     FromUserId  *string `json:"from_user_id,omitempty" `
 
+    /*
+        委托企业refEntId     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" `
+
+    /*
+        委托企业entId     */
+    AssEntId  *string `json:"ass_ent_id,omitempty" `
+
+    /*
+        委托企业entId对应的名称     */
+    AssEntName  *string `json:"ass_ent_name,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetFromEntName(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
@@ -218,5 +230,17 @@ func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetToUserId
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetFromUserId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
     s.FromUserId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetAssRefEntId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
+    s.AssRefEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetAssEntId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
+    s.AssEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetAssEntName(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
+    s.AssEntName = &v
     return s
 }

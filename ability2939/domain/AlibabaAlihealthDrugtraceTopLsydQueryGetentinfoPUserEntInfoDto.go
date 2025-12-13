@@ -18,6 +18,10 @@ type AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto struct {
         1-审核通过，0-审核中，2-审核不通过     */
     AuditStatus  *string `json:"audit_status,omitempty" `
 
+    /*
+        扩展属性     */
+    EntExtend  *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoEntExtend `json:"ent_extend,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto) SetRefEntId(v string) *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto {
@@ -34,5 +38,9 @@ func (s *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto) SetNetw
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto) SetAuditStatus(v string) *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto {
     s.AuditStatus = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto) SetEntExtend(v AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoEntExtend) *AlibabaAlihealthDrugtraceTopLsydQueryGetentinfoPUserEntInfoDto {
+    s.EntExtend = &v
     return s
 }

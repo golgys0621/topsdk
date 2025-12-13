@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugtraceTopLsydUploadretailRequest struct {
@@ -12,7 +12,7 @@ type AlibabaAlihealthDrugtraceTopLsydUploadretailRequest struct {
 	   单据时间（一般为药品入出库时间）     */
 	BillTime *util.LocalTime `json:"bill_time" required:"true" `
 	/*
-	   单据类型[321,零售出库][322,疫苗接种][116,消费者退货入库]     */
+	   单据类型[321,使用出库][322,疫苗接种][116,消费者退货入库]     */
 	BillType *int64 `json:"bill_type" required:"true" `
 	/*
 	   药品类型[2,特药，3,普药]【可以随便填写，单据上传后会以实际为准】   defalutValue��3    */
@@ -59,6 +59,9 @@ type AlibabaAlihealthDrugtraceTopLsydUploadretailRequest struct {
 	/*
 	   备注     */
 	Remarks *string `json:"remarks,omitempty" required:"false" `
+	/*
+	   码解析策略,1代表整单解析成功(任一码解析失败，上传时整单返回错误),传其他值或者不传代表部分解析成功(跳过无法解析的码，其余正常处理并上传)     */
+	IgnorePartSuccessFlag *string `json:"ignore_part_success_flag,omitempty" required:"false" `
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest) SetBillCode(v string) *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest {
@@ -133,6 +136,10 @@ func (s *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest) SetRemarks(v strin
 	s.Remarks = &v
 	return s
 }
+func (s *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest) SetIgnorePartSuccessFlag(v string) *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest {
+	s.IgnorePartSuccessFlag = &v
+	return s
+}
 
 func (req *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest) ToMap() map[string]interface{} {
 	paramMap := make(map[string]interface{})
@@ -189,6 +196,9 @@ func (req *AlibabaAlihealthDrugtraceTopLsydUploadretailRequest) ToMap() map[stri
 	}
 	if req.Remarks != nil {
 		paramMap["remarks"] = *req.Remarks
+	}
+	if req.IgnorePartSuccessFlag != nil {
+		paramMap["ignore_part_success_flag"] = *req.IgnorePartSuccessFlag
 	}
 	return paramMap
 }

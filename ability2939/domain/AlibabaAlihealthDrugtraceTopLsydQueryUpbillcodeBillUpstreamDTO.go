@@ -1,7 +1,7 @@
 package domain
 
 import (
-	"github.com/LGYS07/topsdk/util"
+	"github.com/golgys0621/topsdk/util"
 )
 
 type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO struct {
@@ -44,6 +44,18 @@ type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO struct {
 	/*
 	   发货企业REF_ENT_ID     */
 	FromRefUserId *string `json:"from_ref_user_id,omitempty" `
+
+	/*
+	   委托企业refEntId     */
+	AssRefEntId *string `json:"ass_ref_ent_id,omitempty" `
+
+	/*
+	   委托企业entId     */
+	AssEntId *string `json:"ass_ent_id,omitempty" `
+
+	/*
+	   委托企业entId对应的名称     */
+	AssEntName *string `json:"ass_ent_name,omitempty" `
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO) SetFromUserName(v string) *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO {
@@ -84,5 +96,17 @@ func (s *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO) SetToRe
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO) SetFromRefUserId(v string) *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO {
 	s.FromRefUserId = &v
+	return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO) SetAssRefEntId(v string) *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO {
+	s.AssRefEntId = &v
+	return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO) SetAssEntId(v string) *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO {
+	s.AssEntId = &v
+	return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO) SetAssEntName(v string) *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeBillUpstreamDTO {
+	s.AssEntName = &v
 	return s
 }

@@ -12,11 +12,14 @@ type AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest struct {
         企业自定义编号     */
     RefPartnerId  *string `json:"ref_partner_id,omitempty" required:"false" `
     /*
-        开始时间     */
+        开始时间：往来单位最后修改时间（不推荐使用：因为往来单位是共用的，任意企业提交了信息变更都会引起这个值的变更）     */
     BeginDate  *string `json:"begin_date,omitempty" required:"false" `
     /*
-        结束时间     */
+        结束时间：往来单位最后修改时间（不推荐使用：因为往来单位是共用的，任意企业提交了信息变更都会引起这个值的变更）     */
     EndDate  *string `json:"end_date,omitempty" required:"false" `
+    /*
+        1:审核通过，2：审核不通过     */
+    AuditFlag  *int64 `json:"audit_flag,omitempty" required:"false" `
     /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
@@ -45,6 +48,10 @@ func (s *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetEndDate(v str
     s.EndDate = &v
     return s
 }
+func (s *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetAuditFlag(v int64) *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest {
+    s.AuditFlag = &v
+    return s
+}
 func (s *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetPageSize(v int64) *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest {
     s.PageSize = &v
     return s
@@ -70,6 +77,9 @@ func (req *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) ToMap() map[st
     }
     if(req.EndDate != nil) {
         paramMap["end_date"] = *req.EndDate
+    }
+    if(req.AuditFlag != nil) {
+        paramMap["audit_flag"] = *req.AuditFlag
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize

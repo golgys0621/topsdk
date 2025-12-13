@@ -12,7 +12,7 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutRequest struct {
         结束日期（不写时分秒）     */
     EndDate  *string `json:"end_date" required:"true" `
     /*
-        发货单位     */
+        发货单位ent_id     */
     FromUserId  *string `json:"from_user_id,omitempty" required:"false" `
     /*
         生产批号     */
@@ -32,6 +32,9 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutRequest struct {
     /*
         单据号     */
     BillCode  *string `json:"bill_code,omitempty" required:"false" `
+    /*
+        委托企业Id     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" required:"false" `
     /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
@@ -80,6 +83,10 @@ func (s *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBillCode(v string)
     s.BillCode = &v
     return s
 }
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetAssRefEntId(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutRequest {
+    s.AssRefEntId = &v
+    return s
+}
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPageSize(v int64) *AlibabaAlihealthDrugtraceTopLsydListupoutRequest {
     s.PageSize = &v
     return s
@@ -120,6 +127,9 @@ func (req *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) ToMap() map[string]
     }
     if(req.BillCode != nil) {
         paramMap["bill_code"] = *req.BillCode
+    }
+    if(req.AssRefEntId != nil) {
+        paramMap["ass_ref_ent_id"] = *req.AssRefEntId
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize
