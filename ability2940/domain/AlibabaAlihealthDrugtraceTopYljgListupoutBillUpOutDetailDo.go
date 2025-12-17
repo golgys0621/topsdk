@@ -122,6 +122,10 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo struct {
         委托企业名称     */
     AssEntName  *string `json:"ass_ent_name,omitempty" `
 
+    /*
+        制剂单位描述     */
+    PrepnUnitDesc  *string `json:"prepn_unit_desc,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetFromEntName(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo {
@@ -242,5 +246,9 @@ func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetAssEntId
 }
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetAssEntName(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo {
     s.AssEntName = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetPrepnUnitDesc(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo {
+    s.PrepnUnitDesc = &v
     return s
 }
