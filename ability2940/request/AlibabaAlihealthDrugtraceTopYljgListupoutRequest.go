@@ -6,10 +6,10 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutRequest struct {
         企业ID     */
     RefEntId  *string `json:"ref_ent_id" required:"true" `
     /*
-        开始日期（不写时分秒）     */
+        单据时间的开始日期（不写时分秒），格式：yyyy-MM-dd     */
     BeginDate  *string `json:"begin_date" required:"true" `
     /*
-        结束日期（不写时分秒）     */
+        单据时间的结束日期（不写时分秒），格式：yyyy-MM-dd     */
     EndDate  *string `json:"end_date" required:"true" `
     /*
         发货企业ent_id     */
