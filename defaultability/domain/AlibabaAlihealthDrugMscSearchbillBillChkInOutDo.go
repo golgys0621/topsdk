@@ -86,6 +86,18 @@ type AlibabaAlihealthDrugMscSearchbillBillChkInOutDo struct {
         51全部成功 52部分成功     */
     SubProcessFlag  *string `json:"sub_process_flag,omitempty" `
 
+    /*
+        委托企业refEntId     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" `
+
+    /*
+        委托企业EntId     */
+    AssEntId  *string `json:"ass_ent_id,omitempty" `
+
+    /*
+        委托企业名称     */
+    AssEntName  *string `json:"ass_ent_name,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo) SetBillType(v string) *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo {
@@ -170,5 +182,17 @@ func (s *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo) SetFromRefUserId(v str
 }
 func (s *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo) SetSubProcessFlag(v string) *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo {
     s.SubProcessFlag = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo) SetAssRefEntId(v string) *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo {
+    s.AssRefEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo) SetAssEntId(v string) *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo {
+    s.AssEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo) SetAssEntName(v string) *AlibabaAlihealthDrugMscSearchbillBillChkInOutDo {
+    s.AssEntName = &v
     return s
 }
