@@ -131,8 +131,12 @@ type AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo struct {
     ApprovalLicenceNo  *string `json:"approval_licence_no,omitempty" `
 
     /*
-        制剂单位规格描述     */
+        制剂类型描述     */
     PrepnTypeDesc  *string `json:"prepn_type_desc,omitempty" `
+
+    /*
+        制剂单位描述     */
+    PrepnUnitDesc  *string `json:"prepn_unit_desc,omitempty" `
 
 }
 
@@ -266,5 +270,9 @@ func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetApprovalLicenc
 }
 func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetPrepnTypeDesc(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
     s.PrepnTypeDesc = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetPrepnUnitDesc(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
+    s.PrepnUnitDesc = &v
     return s
 }
