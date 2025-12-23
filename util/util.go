@@ -102,7 +102,7 @@ func GetSign(publicParam map[string]interface{},data map[string]interface{},secr
 		//	signStr = signStr + fmt.Sprintf("%v%v", key, value)
 		//}
 	}
-	fmt.Println(signStr)
+	// fmt.Println(signStr)
 	sign := strings.ToUpper(HmacSha256(signStr,secret))
 	return sign
 }
