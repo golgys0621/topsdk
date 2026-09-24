@@ -34,6 +34,18 @@ type AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO struct {
         草坪做类型     */
     OperDate  *string `json:"oper_date,omitempty" `
 
+    /*
+        委托企业ref_ent_if     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" `
+
+    /*
+        委托企业ent_id     */
+    AssEntId  *string `json:"ass_ent_id,omitempty" `
+
+    /*
+        委托企业     */
+    AssEntName  *string `json:"ass_ent_name,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO) SetRefEntId(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO {
@@ -66,5 +78,17 @@ func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO) SetToRefEnt
 }
 func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO) SetOperDate(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO {
     s.OperDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO) SetAssRefEntId(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO {
+    s.AssRefEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO) SetAssEntId(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO {
+    s.AssEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO) SetAssEntName(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogBillUpOutLogDTO {
+    s.AssEntName = &v
     return s
 }

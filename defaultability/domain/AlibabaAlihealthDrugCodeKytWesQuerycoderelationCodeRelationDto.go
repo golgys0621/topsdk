@@ -38,6 +38,14 @@ type AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto struct {
         异常错误信息     */
     ErrorInfo  *string `json:"error_info,omitempty" `
 
+    /*
+        父码是否有拼箱。 0：无父码权限，1：无拼箱，2：有拼箱     */
+    TopCodeMixFlag  *string `json:"top_code_mix_flag,omitempty" `
+
+    /*
+        查询的码是否拼箱 1：无拼箱，2：有拼箱     */
+    QueryCodeMixFlag  *string `json:"query_code_mix_flag,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto) SetCodeActiveInfoDTO(v AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeActiveInfoDto) *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto {
@@ -74,5 +82,13 @@ func (s *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto) SetErro
 }
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto) SetErrorInfo(v string) *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto {
     s.ErrorInfo = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto) SetTopCodeMixFlag(v string) *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto {
+    s.TopCodeMixFlag = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto) SetQueryCodeMixFlag(v string) *AlibabaAlihealthDrugCodeKytWesQuerycoderelationCodeRelationDto {
+    s.QueryCodeMixFlag = &v
     return s
 }

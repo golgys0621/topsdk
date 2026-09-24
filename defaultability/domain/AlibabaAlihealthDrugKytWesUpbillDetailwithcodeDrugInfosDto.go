@@ -35,7 +35,7 @@ type AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto struct {
     ProdSeqNo  *string `json:"prod_seq_no,omitempty" `
 
     /*
-        药品标识     */
+        药品id     */
     DrugEntBaseInfoId  *string `json:"drug_ent_base_info_id,omitempty" `
 
     /*
@@ -61,6 +61,14 @@ type AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto struct {
     /*
         药品通用名     */
     PhysicName  *string `json:"physic_name,omitempty" `
+
+    /*
+        明细修改日期     */
+    ModDate  *string `json:"mod_date,omitempty" `
+
+    /*
+        批准文号     */
+    ApprovalNo  *string `json:"approval_no,omitempty" `
 
 }
 
@@ -122,5 +130,13 @@ func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto) SetDetailBi
 }
 func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto) SetPhysicName(v string) *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto {
     s.PhysicName = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto) SetModDate(v string) *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto {
+    s.ModDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto) SetApprovalNo(v string) *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeDrugInfosDto {
+    s.ApprovalNo = &v
     return s
 }

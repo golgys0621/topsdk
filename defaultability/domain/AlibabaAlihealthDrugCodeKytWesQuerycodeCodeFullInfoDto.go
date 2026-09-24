@@ -30,6 +30,10 @@ type AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto struct {
         包装比例     */
     PkgRatio  *string `json:"pkg_ratio,omitempty" `
 
+    /*
+        码是否拼箱 1：无拼箱，2：有拼箱     */
+    CodeMixFlag  *string `json:"code_mix_flag,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto) SetCodeStatusTypeDTO(v AlibabaAlihealthDrugCodeKytWesQuerycodeCodeStatusTypeDto) *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto {
@@ -58,5 +62,9 @@ func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto) SetCodeProduceI
 }
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto) SetPkgRatio(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto {
     s.PkgRatio = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto) SetCodeMixFlag(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodeCodeFullInfoDto {
+    s.CodeMixFlag = &v
     return s
 }

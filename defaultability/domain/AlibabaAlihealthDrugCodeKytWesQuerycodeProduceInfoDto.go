@@ -3,7 +3,7 @@ package domain
 
 type AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto struct {
     /*
-        生产日期     */
+        生产日期，格式化日期，到月的，默认到月底。     */
     ProduceDateStr  *string `json:"produce_date_str,omitempty" `
 
     /*
@@ -11,7 +11,7 @@ type AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto struct {
     PkgAmount  *string `json:"pkg_amount,omitempty" `
 
     /*
-        有效期至     */
+        有效期至，格式化日期，到月的，默认到月底。     */
     ExpireDate  *string `json:"expire_date,omitempty" `
 
     /*
@@ -19,12 +19,20 @@ type AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto struct {
     BatchNo  *string `json:"batch_no,omitempty" `
 
     /*
-        生产日期     */
+        生产日期,生产企业原始上传日期，有可能只到月     */
     OriginalProduceDate  *string `json:"original_produce_date,omitempty" `
 
     /*
-        有效期至     */
+        有效期至，生产企业原始上传日期，有可能只到月     */
     OriginalExpireDate  *string `json:"original_expire_date,omitempty" `
+
+    /*
+        上市许可持有人企业名字     */
+    MahName  *string `json:"mah_name,omitempty" `
+
+    /*
+        上市许可持有人企业refEntId     */
+    MahRefEntId  *string `json:"mah_ref_ent_id,omitempty" `
 
 }
 
@@ -50,5 +58,13 @@ func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto) SetOriginalProdu
 }
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto) SetOriginalExpireDate(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto {
     s.OriginalExpireDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto) SetMahName(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto {
+    s.MahName = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto) SetMahRefEntId(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodeProduceInfoDto {
+    s.MahRefEntId = &v
     return s
 }

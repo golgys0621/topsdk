@@ -102,6 +102,14 @@ type AlibabaAlihealthDrugKytWesListpartsPEntParDto struct {
         拓展属性     */
     EntExtend  *AlibabaAlihealthDrugKytWesListpartsEntExtend `json:"ent_extend,omitempty" `
 
+    /*
+        1（待替换）：经平台数据治理，系统已匹配到正确企业。请自行确认并替换为正确的企业信息，并使用 replace_ref_ent_id 查询清洗后的企业信息。 2（待更新）：企业名称已发生变更。请使用 refentid 获取最新的企业信息。 其余返回值：已废弃，无需处理。     */
+    Shared  *string `json:"shared,omitempty" `
+
+    /*
+        唯一认证代码     */
+    OrgCode  *string `json:"org_code,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugKytWesListpartsPEntParDto) SetPartnerId(v string) *AlibabaAlihealthDrugKytWesListpartsPEntParDto {
@@ -202,5 +210,13 @@ func (s *AlibabaAlihealthDrugKytWesListpartsPEntParDto) SetPartnerTypeDesc(v str
 }
 func (s *AlibabaAlihealthDrugKytWesListpartsPEntParDto) SetEntExtend(v AlibabaAlihealthDrugKytWesListpartsEntExtend) *AlibabaAlihealthDrugKytWesListpartsPEntParDto {
     s.EntExtend = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListpartsPEntParDto) SetShared(v string) *AlibabaAlihealthDrugKytWesListpartsPEntParDto {
+    s.Shared = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListpartsPEntParDto) SetOrgCode(v string) *AlibabaAlihealthDrugKytWesListpartsPEntParDto {
+    s.OrgCode = &v
     return s
 }

@@ -54,6 +54,10 @@ type AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto struct {
         出库单id     */
     BillOutId  *string `json:"bill_out_id,omitempty" `
 
+    /*
+        配送单位     */
+    DisEntInfoList  *[]AlibabaAlihealthDrugKytWesSearchbillDetailDisentinfolist `json:"dis_ent_info_list,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto) SetModDate(v string) *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto {
@@ -106,5 +110,9 @@ func (s *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto) SetCodes(
 }
 func (s *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto) SetBillOutId(v string) *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto {
     s.BillOutId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto) SetDisEntInfoList(v []AlibabaAlihealthDrugKytWesSearchbillDetailDisentinfolist) *AlibabaAlihealthDrugKytWesSearchbillDetailBillInOutDetailDto {
+    s.DisEntInfoList = &v
     return s
 }

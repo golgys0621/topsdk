@@ -46,6 +46,10 @@ type AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto struct {
         单据上传时间     */
     CrtDate  *string `json:"crt_date,omitempty" `
 
+    /*
+        单据时间     */
+    BillTimeFormat  *string `json:"bill_time_format,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto) SetBillCode(v string) *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto {
@@ -90,5 +94,9 @@ func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto) SetDr
 }
 func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto) SetCrtDate(v string) *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto {
     s.CrtDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto) SetBillTimeFormat(v string) *AlibabaAlihealthDrugKytWesUpbillDetailwithcodeBillUpOutDetailDto {
+    s.BillTimeFormat = &v
     return s
 }

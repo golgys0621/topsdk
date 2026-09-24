@@ -138,6 +138,22 @@ type AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo struct {
         制剂单位描述     */
     PrepnUnitDesc  *string `json:"prepn_unit_desc,omitempty" `
 
+    /*
+        单据上传时间     */
+    BillUploadTime  *string `json:"bill_upload_time,omitempty" `
+
+    /*
+        单据记录创建时间     */
+    CrtDate  *string `json:"crt_date,omitempty" `
+
+    /*
+        单据记录更新时间     */
+    ModDate  *string `json:"mod_date,omitempty" `
+
+    /*
+        单据验证时间     */
+    CheckDate  *string `json:"check_date,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetFromEntName(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
@@ -274,5 +290,21 @@ func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetPrepnTypeDesc(
 }
 func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetPrepnUnitDesc(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
     s.PrepnUnitDesc = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetBillUploadTime(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
+    s.BillUploadTime = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetCrtDate(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
+    s.CrtDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetModDate(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
+    s.ModDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo) SetCheckDate(v string) *AlibabaAlihealthDrugKytWesListupoutBillUpOutDetailDo {
+    s.CheckDate = &v
     return s
 }

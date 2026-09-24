@@ -50,6 +50,14 @@ type AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO struct {
         代理企业名称     */
     AssEntName  *string `json:"ass_ent_name,omitempty" `
 
+    /*
+        单据中的码,如有多个英文逗号隔开     */
+    CodeStr  *string `json:"code_str,omitempty" `
+
+    /*
+        123     */
+    BillId  *string `json:"bill_id,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO) SetBillType(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO {
@@ -98,5 +106,13 @@ func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO) SetAssRefE
 }
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO) SetAssEntName(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO {
     s.AssEntName = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO) SetCodeStr(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO {
+    s.CodeStr = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO) SetBillId(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoBillInOutDTO {
+    s.BillId = &v
     return s
 }
