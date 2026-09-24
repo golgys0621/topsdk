@@ -31,11 +31,11 @@ type AlibabaAlihealthSynergySyAgentpersonQuerySyAgentPersonDTO struct {
     AuthProduct  *string `json:"auth_product,omitempty" `
 
     /*
-        过期状态:0未过期1已过期     */
+        是否有过期状态的资料:0：无；1:有     */
     ExpireStatus  *string `json:"expire_status,omitempty" `
 
     /*
-        归档状态:0未归档1已归档     */
+        是否有未归档的资料:0：存在未归档；1全部归档     */
     ArchiveStatus  *string `json:"archive_status,omitempty" `
 
     /*

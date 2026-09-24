@@ -46,6 +46,10 @@ type AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto struct {
         单据详情     */
     BillChkInOutDetailListDTOList  *[]AlibabaAlihealthDrugMscSearchbillDetailBillchkinoutdetaillistdtolist `json:"bill_chk_in_out_detail_list_d_t_o_list,omitempty" `
 
+    /*
+        配送单位     */
+    DisEntInfoList  *[]AlibabaAlihealthDrugMscSearchbillDetailDisentinfolist `json:"dis_ent_info_list,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto) SetModDate(v string) *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto {
@@ -90,5 +94,9 @@ func (s *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto) SetBillCode(
 }
 func (s *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto) SetBillChkInOutDetailListDTOList(v []AlibabaAlihealthDrugMscSearchbillDetailBillchkinoutdetaillistdtolist) *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto {
     s.BillChkInOutDetailListDTOList = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto) SetDisEntInfoList(v []AlibabaAlihealthDrugMscSearchbillDetailDisentinfolist) *AlibabaAlihealthDrugMscSearchbillDetailBillInOutDetailDto {
+    s.DisEntInfoList = &v
     return s
 }
