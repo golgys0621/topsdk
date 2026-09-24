@@ -50,6 +50,10 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto struct {
         委托企业refEntId     */
     AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" `
 
+    /*
+        订货单编号     */
+    OrderCode  *string `json:"order_code,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetBillCode(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
@@ -98,5 +102,9 @@ func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetA
 }
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetAssRefEntId(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
     s.AssRefEntId = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto) SetOrderCode(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutDetailBillUpOutDetailDto {
+    s.OrderCode = &v
     return s
 }

@@ -63,11 +63,11 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo struct {
     BillType  *string `json:"bill_type,omitempty" `
 
     /*
-        发货企业     */
+        收货企业名称     */
     ToUserName  *string `json:"to_user_name,omitempty" `
 
     /*
-        收货企业     */
+        发货企业名称     */
     FromUserName  *string `json:"from_user_name,omitempty" `
 
     /*
@@ -125,6 +125,14 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo struct {
     /*
         制剂单位描述     */
     PrepnUnitDesc  *string `json:"prepn_unit_desc,omitempty" `
+
+    /*
+        单据上传时间     */
+    BillUploadTime  *string `json:"bill_upload_time,omitempty" `
+
+    /*
+        订货单编号     */
+    OrderCode  *string `json:"order_code,omitempty" `
 
 }
 
@@ -250,5 +258,13 @@ func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetAssEntNa
 }
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetPrepnUnitDesc(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo {
     s.PrepnUnitDesc = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetBillUploadTime(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo {
+    s.BillUploadTime = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo) SetOrderCode(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutBillUpOutDetailDo {
+    s.OrderCode = &v
     return s
 }

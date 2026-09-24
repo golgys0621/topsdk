@@ -102,6 +102,14 @@ type AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto struct {
         拓展属性     */
     EntExtend  *AlibabaAlihealthDrugtraceTopYljgQueryListpartsEntExtend `json:"ent_extend,omitempty" `
 
+    /*
+        1（待替换）：经平台数据治理，系统已匹配到正确企业。请自行确认并替换为正确的企业信息，并使用 replace_ref_ent_id 查询清洗后的企业信息。 2（待更新）：企业名称已发生变更。请使用 refentid 获取最新的企业信息。 其余返回值：已废弃，无需处理。     */
+    Shared  *string `json:"shared,omitempty" `
+
+    /*
+        唯一认证代码     */
+    OrgCode  *string `json:"org_code,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto) SetPartnerId(v string) *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto {
@@ -202,5 +210,13 @@ func (s *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto) SetPartnerTyp
 }
 func (s *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto) SetEntExtend(v AlibabaAlihealthDrugtraceTopYljgQueryListpartsEntExtend) *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto {
     s.EntExtend = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto) SetShared(v string) *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto {
+    s.Shared = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto) SetOrgCode(v string) *AlibabaAlihealthDrugtraceTopYljgQueryListpartsPEntParDto {
+    s.OrgCode = &v
     return s
 }
