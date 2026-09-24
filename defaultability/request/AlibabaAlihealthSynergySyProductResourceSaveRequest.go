@@ -1,8 +1,5 @@
 package request
 
-import (
-        "github.com/golgys0621/topsdk/util"
-    )
 
 type AlibabaAlihealthSynergySyProductResourceSaveRequest struct {
     /*
