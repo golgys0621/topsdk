@@ -7,10 +7,10 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutRequest struct {
     RefEntId  *string `json:"ref_ent_id" required:"true" `
     /*
         单据时间的开始日期（不写时分秒），格式：yyyy-MM-dd     */
-    BeginDate  *string `json:"begin_date" required:"true" `
+    BeginDate  *string `json:"begin_date,omitempty" required:"false" `
     /*
         单据时间的结束日期（不写时分秒），格式：yyyy-MM-dd     */
-    EndDate  *string `json:"end_date" required:"true" `
+    EndDate  *string `json:"end_date,omitempty" required:"false" `
     /*
         发货企业ent_id     */
     FromUserId  *string `json:"from_user_id,omitempty" required:"false" `
@@ -24,7 +24,7 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutRequest struct {
         单据类型     */
     BillType  *string `json:"bill_type,omitempty" required:"false" `
     /*
-        药品类型     */
+        是否是重点药品（传入空查询非重点药品；不为空查询重点药品）     */
     PhysicType  *string `json:"physic_type,omitempty" required:"false" `
     /*
         状态     */
@@ -35,6 +35,12 @@ type AlibabaAlihealthDrugtraceTopYljgListupoutRequest struct {
     /*
         委托企业entId     */
     AssEnId  *string `json:"ass_en_id,omitempty" required:"false" `
+    /*
+        单据上传的开始日期，格式：yyyy-MM-dd HH:mm:ss     */
+    UploadTimeBegin  *string `json:"upload_time_begin,omitempty" required:"false" `
+    /*
+        单据上传的结束日期，格式：yyyy-MM-dd HH:mm:ss     */
+    UploadTimeEnd  *string `json:"upload_time_end,omitempty" required:"false" `
     /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
@@ -87,6 +93,14 @@ func (s *AlibabaAlihealthDrugtraceTopYljgListupoutRequest) SetAssEnId(v string) 
     s.AssEnId = &v
     return s
 }
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutRequest) SetUploadTimeBegin(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutRequest {
+    s.UploadTimeBegin = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopYljgListupoutRequest) SetUploadTimeEnd(v string) *AlibabaAlihealthDrugtraceTopYljgListupoutRequest {
+    s.UploadTimeEnd = &v
+    return s
+}
 func (s *AlibabaAlihealthDrugtraceTopYljgListupoutRequest) SetPageSize(v int64) *AlibabaAlihealthDrugtraceTopYljgListupoutRequest {
     s.PageSize = &v
     return s
@@ -130,6 +144,12 @@ func (req *AlibabaAlihealthDrugtraceTopYljgListupoutRequest) ToMap() map[string]
     }
     if(req.AssEnId != nil) {
         paramMap["ass_en_id"] = *req.AssEnId
+    }
+    if(req.UploadTimeBegin != nil) {
+        paramMap["upload_time_begin"] = *req.UploadTimeBegin
+    }
+    if(req.UploadTimeEnd != nil) {
+        paramMap["upload_time_end"] = *req.UploadTimeEnd
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize

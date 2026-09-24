@@ -1,23 +1,23 @@
 package response
 
 import (
-	"github.com/golgys0621/topsdk/ability2940/domain"
+    "github.com/golgys0621/topsdk/ability2940/domain"
 )
 
 type AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeResponse struct {
 
-	/*
-	   System request id
-	*/
-	RequestId string `json:"request_id,omitempty" `
+    /*
+        System request id
+    */
+    RequestId string `json:"request_id,omitempty" `
 
-	/*
-	   System body
-	*/
-	Body string
+    /*
+        System body
+    */
+    Body string
 
-	/*
-	   接口返回model
-	*/
-	Result domain.AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeResult `json:"result,omitempty" `
+    /*
+        接口返回model
+    */
+    Result  domain.AlibabaAlihealthDrugtraceTopYljgQueryUpbillcodeResult `json:"result,omitempty" `
 }
