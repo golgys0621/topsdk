@@ -47,7 +47,7 @@ type AlibabaAlihealthSynergySyEntpartnerResourceListSyEntPartnerResourceDetailMo
     Note  *string `json:"note,omitempty" `
 
     /*
-        扩展属性，json对象数组，code：资质支持的属性code，value:值     */
+        扩展属性，json对象数组，code：资质支持的属性code，value:值。扩展属性对照详见：https://qg6r2i.yuque.com/qg6r2i/dxne69/irv86v7e0pzhz4qm?singleDoc# 《首营资质证照扩展属性对照表》     */
     ExtendInfo  *string `json:"extend_info,omitempty" `
 
     /*
