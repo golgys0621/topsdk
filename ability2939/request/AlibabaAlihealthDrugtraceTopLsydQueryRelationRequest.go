@@ -6,7 +6,7 @@ type AlibabaAlihealthDrugtraceTopLsydQueryRelationRequest struct {
         接口调用企业的唯一标识（接口调用者）     */
     RefEntId  *string `json:"ref_ent_id" required:"true" `
     /*
-        追溯码     */
+        追溯码，支持批量查询英文逗号拼接，不超过10个码     */
     Code  *string `json:"code" required:"true" `
     /*
         目标企业唯一标识（为哪个企业查询，一般与入参ref_ent_id一样）     */
