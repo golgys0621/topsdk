@@ -9,10 +9,10 @@ type AlibabaAlihealthSynergySyAgentpersonResourceListRequest struct {
         委托人id，通过本企业委托人接口获取ID或者通过合作企业委托人查询接口获取ID     */
     SyAgentPersonId  *string `json:"sy_agent_person_id" required:"true" `
     /*
-        使用状态，0已过期1使用中     */
+        是否有过期资料:0否1是     */
     UseStatus  *string `json:"use_status,omitempty" required:"false" `
     /*
-        归档状态，0未归档1已归档     */
+        是否有归档资料：0否1是     */
     ArchiveStatus  *string `json:"archive_status,omitempty" required:"false" `
 }
 

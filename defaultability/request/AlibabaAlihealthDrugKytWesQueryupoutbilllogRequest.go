@@ -15,6 +15,9 @@ type AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest struct {
         截止查询时间（日期格式）     */
     EndOperDate  *string `json:"end_oper_date" required:"true" `
     /*
+        物流委托单位     */
+    AgentRefEntId  *string `json:"agent_ref_ent_id,omitempty" required:"false" `
+    /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
     /*
@@ -36,6 +39,10 @@ func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest) SetBeginOperDate(v 
 }
 func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest) SetEndOperDate(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest {
     s.EndOperDate = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest) SetAgentRefEntId(v string) *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest {
+    s.AgentRefEntId = &v
     return s
 }
 func (s *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest) SetPageSize(v int64) *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest {
@@ -60,6 +67,9 @@ func (req *AlibabaAlihealthDrugKytWesQueryupoutbilllogRequest) ToMap() map[strin
     }
     if(req.EndOperDate != nil) {
         paramMap["end_oper_date"] = *req.EndOperDate
+    }
+    if(req.AgentRefEntId != nil) {
+        paramMap["agent_ref_ent_id"] = *req.AgentRefEntId
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize

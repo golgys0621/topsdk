@@ -12,10 +12,10 @@ type AlibabaAlihealthSynergySyAgentpersonQueryRequest struct {
         委托人编号     */
     UserNo  *string `json:"user_no,omitempty" required:"false" `
     /*
-        过期状态:0未过期1已过期     */
+        是否有过期资料:0否1是     */
     ExpireStatus  *string `json:"expire_status,omitempty" required:"false" `
     /*
-        归档状态:0未归档1已归档     */
+        是否有归档资料：0否1是     */
     ArchiveStatus  *string `json:"archive_status,omitempty" required:"false" `
     /*
         页码 defalutValue��1    */

@@ -9,7 +9,7 @@ type AlibabaAlihealthDrugKytWesQueryUpbillcodeRequest struct {
         获取licenseToken，通过alibaba.alihealth.drug.code.kyt.wes.getlicense     */
     LicenseToken  *string `json:"license_token" required:"true" `
     /*
-        追溯码     */
+        追溯码,如有多个英文逗号隔开,最多支持10个     */
     Code  *string `json:"code,omitempty" required:"false" `
     /*
         物流委托单位     */

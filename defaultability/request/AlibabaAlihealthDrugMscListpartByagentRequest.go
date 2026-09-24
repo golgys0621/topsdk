@@ -1,13 +1,10 @@
 package request
 
 
-type AlibabaAlihealthDrugKytWesListpartsByagentRequest struct {
+type AlibabaAlihealthDrugMscListpartByagentRequest struct {
     /*
         企业唯一标识（货主企业）     */
     RefEntId  *string `json:"ref_ent_id" required:"true" `
-    /*
-        获取licenseToken，通过alibaba.alihealth.drug.code.kyt.wes.getlicense     */
-    LicenseToken  *string `json:"license_token" required:"true" `
     /*
         企业名称     */
     EntName  *string `json:"ent_name,omitempty" required:"false" `
@@ -40,62 +37,55 @@ type AlibabaAlihealthDrugKytWesListpartsByagentRequest struct {
     Page  *int64 `json:"page" required:"true" `
 }
 
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetRefEntId(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetRefEntId(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.RefEntId = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetLicenseToken(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
-    s.LicenseToken = &v
-    return s
-}
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetEntName(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetEntName(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.EntName = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetRefPartnerId(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetRefPartnerId(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.RefPartnerId = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetBeginDate(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetBeginDate(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.BeginDate = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetEndDate(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetEndDate(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.EndDate = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetAgentRefEntId(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetAgentRefEntId(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.AgentRefEntId = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetAuditFlag(v int64) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetAuditFlag(v int64) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.AuditFlag = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetShared(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetShared(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.Shared = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetOrgCode(v string) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetOrgCode(v string) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.OrgCode = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetPageSize(v int64) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetPageSize(v int64) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.PageSize = &v
     return s
 }
-func (s *AlibabaAlihealthDrugKytWesListpartsByagentRequest) SetPage(v int64) *AlibabaAlihealthDrugKytWesListpartsByagentRequest {
+func (s *AlibabaAlihealthDrugMscListpartByagentRequest) SetPage(v int64) *AlibabaAlihealthDrugMscListpartByagentRequest {
     s.Page = &v
     return s
 }
 
-func (req *AlibabaAlihealthDrugKytWesListpartsByagentRequest) ToMap() map[string]interface{} {
+func (req *AlibabaAlihealthDrugMscListpartByagentRequest) ToMap() map[string]interface{} {
     paramMap := make(map[string]interface{})
     if(req.RefEntId != nil) {
         paramMap["ref_ent_id"] = *req.RefEntId
-    }
-    if(req.LicenseToken != nil) {
-        paramMap["license_token"] = *req.LicenseToken
     }
     if(req.EntName != nil) {
         paramMap["ent_name"] = *req.EntName
@@ -130,7 +120,7 @@ func (req *AlibabaAlihealthDrugKytWesListpartsByagentRequest) ToMap() map[string
     return paramMap
 }
 
-func (req *AlibabaAlihealthDrugKytWesListpartsByagentRequest) ToFileMap() map[string]interface{} {
+func (req *AlibabaAlihealthDrugMscListpartByagentRequest) ToFileMap() map[string]interface{} {
     fileMap := make(map[string]interface{})
     return fileMap
 }

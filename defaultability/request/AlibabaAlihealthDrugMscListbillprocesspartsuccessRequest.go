@@ -7,7 +7,7 @@ type AlibabaAlihealthDrugMscListbillprocesspartsuccessRequest struct {
     RefEntId  *string `json:"ref_ent_id" required:"true" `
     /*
         单据号     */
-    BillCode  *string `json:"bill_code,omitempty" required:"false" `
+    BillCode  *string `json:"bill_code" required:"true" `
     /*
         错误码类型     */
     ErrorCode  *string `json:"error_code,omitempty" required:"false" `

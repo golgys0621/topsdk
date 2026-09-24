@@ -15,14 +15,20 @@ type AlibabaAlihealthDrugKytWesListpartsRequest struct {
         企业自定义编号     */
     RefPartnerId  *string `json:"ref_partner_id,omitempty" required:"false" `
     /*
-        开始时间：往来单位最后修改时间（不推荐使用：因为往来单位是共用的，任意企业提交了信息变更都会引起这个值的变更）     */
+        开始时间：往来单位最后修改时间（往来单位是共用的，任意企业提交了信息变更都会引起这个值的变更）     */
     BeginDate  *string `json:"begin_date,omitempty" required:"false" `
     /*
-        结束时间：往来单位最后修改时间（不推荐使用：因为往来单位是共用的，任意企业提交了信息变更都会引起这个值的变更）     */
+        结束时间：往来单位最后修改时间（往来单位是共用的，任意企业提交了信息变更都会引起这个值的变更）     */
     EndDate  *string `json:"end_date,omitempty" required:"false" `
     /*
         1审核通过、2审核不通过     */
     AuditFlag  *int64 `json:"audit_flag,omitempty" required:"false" `
+    /*
+        1:待替换 2:待更新     */
+    Shared  *string `json:"shared,omitempty" required:"false" `
+    /*
+        唯一认证代码     */
+    OrgCode  *string `json:"org_code,omitempty" required:"false" `
     /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
@@ -59,6 +65,14 @@ func (s *AlibabaAlihealthDrugKytWesListpartsRequest) SetAuditFlag(v int64) *Alib
     s.AuditFlag = &v
     return s
 }
+func (s *AlibabaAlihealthDrugKytWesListpartsRequest) SetShared(v string) *AlibabaAlihealthDrugKytWesListpartsRequest {
+    s.Shared = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListpartsRequest) SetOrgCode(v string) *AlibabaAlihealthDrugKytWesListpartsRequest {
+    s.OrgCode = &v
+    return s
+}
 func (s *AlibabaAlihealthDrugKytWesListpartsRequest) SetPageSize(v int64) *AlibabaAlihealthDrugKytWesListpartsRequest {
     s.PageSize = &v
     return s
@@ -90,6 +104,12 @@ func (req *AlibabaAlihealthDrugKytWesListpartsRequest) ToMap() map[string]interf
     }
     if(req.AuditFlag != nil) {
         paramMap["audit_flag"] = *req.AuditFlag
+    }
+    if(req.Shared != nil) {
+        paramMap["shared"] = *req.Shared
+    }
+    if(req.OrgCode != nil) {
+        paramMap["org_code"] = *req.OrgCode
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize

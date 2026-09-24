@@ -21,6 +21,12 @@ type AlibabaAlihealthDrugMscListpartsRequest struct {
         1:审核通过，2：审核不通过     */
     AuditFlag  *int64 `json:"audit_flag,omitempty" required:"false" `
     /*
+        1:待替换 2:待更新     */
+    Shared  *string `json:"shared,omitempty" required:"false" `
+    /*
+        唯一认证代码     */
+    OrgCode  *string `json:"org_code,omitempty" required:"false" `
+    /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
     /*
@@ -52,6 +58,14 @@ func (s *AlibabaAlihealthDrugMscListpartsRequest) SetAuditFlag(v int64) *Alibaba
     s.AuditFlag = &v
     return s
 }
+func (s *AlibabaAlihealthDrugMscListpartsRequest) SetShared(v string) *AlibabaAlihealthDrugMscListpartsRequest {
+    s.Shared = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugMscListpartsRequest) SetOrgCode(v string) *AlibabaAlihealthDrugMscListpartsRequest {
+    s.OrgCode = &v
+    return s
+}
 func (s *AlibabaAlihealthDrugMscListpartsRequest) SetPageSize(v int64) *AlibabaAlihealthDrugMscListpartsRequest {
     s.PageSize = &v
     return s
@@ -80,6 +94,12 @@ func (req *AlibabaAlihealthDrugMscListpartsRequest) ToMap() map[string]interface
     }
     if(req.AuditFlag != nil) {
         paramMap["audit_flag"] = *req.AuditFlag
+    }
+    if(req.Shared != nil) {
+        paramMap["shared"] = *req.Shared
+    }
+    if(req.OrgCode != nil) {
+        paramMap["org_code"] = *req.OrgCode
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize

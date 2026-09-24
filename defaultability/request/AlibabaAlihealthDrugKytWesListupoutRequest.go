@@ -45,6 +45,15 @@ type AlibabaAlihealthDrugKytWesListupoutRequest struct {
         单据上传的结束日期，格式：yyyy-MM-dd HH:mm:ss     */
     UploadTimeEnd  *string `json:"upload_time_end,omitempty" required:"false" `
     /*
+        单据明细修改开始日期,格式：yyyy-MM-dd HH:mm:ss     */
+    ModDateBegin  *string `json:"mod_date_begin,omitempty" required:"false" `
+    /*
+        单据明细修改结束日期,格式：yyyy-MM-dd HH:mm:ss     */
+    ModDateEnd  *string `json:"mod_date_end,omitempty" required:"false" `
+    /*
+        委托企业     */
+    AssRefEntId  *string `json:"ass_ref_ent_id,omitempty" required:"false" `
+    /*
         页大小     */
     PageSize  *int64 `json:"page_size" required:"true" `
     /*
@@ -108,6 +117,18 @@ func (s *AlibabaAlihealthDrugKytWesListupoutRequest) SetUploadTimeEnd(v string) 
     s.UploadTimeEnd = &v
     return s
 }
+func (s *AlibabaAlihealthDrugKytWesListupoutRequest) SetModDateBegin(v string) *AlibabaAlihealthDrugKytWesListupoutRequest {
+    s.ModDateBegin = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutRequest) SetModDateEnd(v string) *AlibabaAlihealthDrugKytWesListupoutRequest {
+    s.ModDateEnd = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugKytWesListupoutRequest) SetAssRefEntId(v string) *AlibabaAlihealthDrugKytWesListupoutRequest {
+    s.AssRefEntId = &v
+    return s
+}
 func (s *AlibabaAlihealthDrugKytWesListupoutRequest) SetPageSize(v int64) *AlibabaAlihealthDrugKytWesListupoutRequest {
     s.PageSize = &v
     return s
@@ -160,6 +181,15 @@ func (req *AlibabaAlihealthDrugKytWesListupoutRequest) ToMap() map[string]interf
     }
     if(req.UploadTimeEnd != nil) {
         paramMap["upload_time_end"] = *req.UploadTimeEnd
+    }
+    if(req.ModDateBegin != nil) {
+        paramMap["mod_date_begin"] = *req.ModDateBegin
+    }
+    if(req.ModDateEnd != nil) {
+        paramMap["mod_date_end"] = *req.ModDateEnd
+    }
+    if(req.AssRefEntId != nil) {
+        paramMap["ass_ref_ent_id"] = *req.AssRefEntId
     }
     if(req.PageSize != nil) {
         paramMap["page_size"] = *req.PageSize

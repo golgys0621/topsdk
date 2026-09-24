@@ -9,8 +9,11 @@ type AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest struct {
         获取licenseToken，通过alibaba.alihealth.drug.code.kyt.wes.getlicense     */
     LicenseToken  *string `json:"license_token" required:"true" `
     /*
-        码     */
+        码,如有多个英文逗号隔开。一次最多支持10个追溯码     */
     Code  *string `json:"code" required:"true" `
+    /*
+        货主企业（在三方物流场景中，当物流企业查询货主是否上传过单据时，auth_ref_user_id 对应货主企业，ref_ent_id 对应当前开通 WES 权限的物流企业。）     */
+    AuthRefUserId  *string `json:"auth_ref_user_id,omitempty" required:"false" `
 }
 
 func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest) SetRefEntId(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest {
@@ -25,6 +28,10 @@ func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest) SetCode(v strin
     s.Code = &v
     return s
 }
+func (s *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest) SetAuthRefUserId(v string) *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest {
+    s.AuthRefUserId = &v
+    return s
+}
 
 func (req *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest) ToMap() map[string]interface{} {
     paramMap := make(map[string]interface{})
@@ -36,6 +43,9 @@ func (req *AlibabaAlihealthDrugCodeKytWesQuerycodebillinfoRequest) ToMap() map[s
     }
     if(req.Code != nil) {
         paramMap["code"] = *req.Code
+    }
+    if(req.AuthRefUserId != nil) {
+        paramMap["auth_ref_user_id"] = *req.AuthRefUserId
     }
     return paramMap
 }

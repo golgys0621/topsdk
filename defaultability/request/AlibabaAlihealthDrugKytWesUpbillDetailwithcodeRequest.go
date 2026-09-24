@@ -3,10 +3,10 @@ package request
 
 type AlibabaAlihealthDrugKytWesUpbillDetailwithcodeRequest struct {
     /*
-        企业id     */
+        企业refentid(填收货单位的ID)     */
     RefEntId  *string `json:"ref_ent_id" required:"true" `
     /*
-        获取licenseToken，通过alibaba.alihealth.drug.code.kyt.wes.getlicense     */
+        获取licenseToken，通过alibaba.alihealth.drug.code.kyt.wes.getlicense；填本企业的或者三方物流企业的license     */
     LicenseToken  *string `json:"license_token" required:"true" `
     /*
         单据号     */
@@ -18,7 +18,7 @@ type AlibabaAlihealthDrugKytWesUpbillDetailwithcodeRequest struct {
         收货企业refEntId     */
     ToRefUserId  *string `json:"to_ref_user_id" required:"true" `
     /*
-        委托企业id     */
+        委托企业refentid(如果是三方的模式，需要填三方物流企业的ID)，注意收货企业必须在平台 "授权管理/授权配送单位"里面，授权三方物流，查询本企业的上游出库单     */
     AgentRefEntId  *string `json:"agent_ref_ent_id,omitempty" required:"false" `
 }
 
