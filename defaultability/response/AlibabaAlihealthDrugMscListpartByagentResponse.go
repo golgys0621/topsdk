@@ -4,7 +4,7 @@ import (
     "github.com/golgys0621/topsdk/defaultability/domain"
 )
 
-type AlibabaAlihealthSynergySyAgentpersonResourceListResponse struct {
+type AlibabaAlihealthDrugMscListpartByagentResponse struct {
 
     /*
         System request id
@@ -17,7 +17,7 @@ type AlibabaAlihealthSynergySyAgentpersonResourceListResponse struct {
     Body string
 
     /*
-        返回结果
+        监控宝推送网站监控信息，返回结果
     */
-    Result  domain.AlibabaAlihealthSynergySyAgentpersonResourceListResultModel `json:"result,omitempty" `
+    Result  domain.AlibabaAlihealthDrugMscListpartByagentResultModel `json:"result,omitempty" `
 }

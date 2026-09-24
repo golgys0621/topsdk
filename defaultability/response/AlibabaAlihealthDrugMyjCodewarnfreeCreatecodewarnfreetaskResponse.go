@@ -1,10 +1,9 @@
 package response
 
 import (
-    "github.com/golgys0621/topsdk/defaultability/domain"
 )
 
-type AlibabaAlihealthDrugMscUploadcircubillResponse struct {
+type AlibabaAlihealthDrugMyjCodewarnfreeCreatecodewarnfreetaskResponse struct {
 
     /*
         System request id
@@ -17,7 +16,7 @@ type AlibabaAlihealthDrugMscUploadcircubillResponse struct {
     Body string
 
     /*
-        返回结果
+        返回任务批次编码
     */
     Model  string `json:"model,omitempty" `
     /*
@@ -32,12 +31,4 @@ type AlibabaAlihealthDrugMscUploadcircubillResponse struct {
         是否成功(true 成功 ,false失败)
     */
     ResponseSuccess  bool `json:"response_success,omitempty" `
-    /*
-        结果子编码
-    */
-    SubMsgCode  string `json:"sub_msg_code,omitempty" `
-    /*
-        错误信息明细,便于后续操作
-    */
-    OperationInfoMap  domain.AlibabaAlihealthDrugMscUploadcircubillOperationInfoMap `json:"operation_info_map,omitempty" `
 }

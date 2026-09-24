@@ -1,23 +1,23 @@
 package response
 
 import (
-	"github.com/golgys0621/topsdk/defaultability/domain"
+    "github.com/golgys0621/topsdk/defaultability/domain"
 )
 
 type AlibabaAlihealthDrugMscSaveentResponse struct {
 
-	/*
-	   System request id
-	*/
-	RequestId string `json:"request_id,omitempty" `
+    /*
+        System request id
+    */
+    RequestId string `json:"request_id,omitempty" `
 
-	/*
-	   System body
-	*/
-	Body string
+    /*
+        System body
+    */
+    Body string
 
-	/*
-	   往来单位新增接口返回
-	*/
-	Result domain.AlibabaAlihealthDrugMscSaveentResultModel `json:"result,omitempty" `
+    /*
+        往来单位新增接口返回
+    */
+    Result  domain.AlibabaAlihealthDrugMscSaveentResultModel `json:"result,omitempty" `
 }
