@@ -54,6 +54,10 @@ type AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO struct {
         报告id     */
     ReportId  *string `json:"report_id,omitempty" `
 
+    /*
+        生产企业名称     */
+    ProduceName  *string `json:"produce_name,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO) SetDrugReportV2Id(v int64) *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO {
@@ -106,5 +110,9 @@ func (s *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO) SetR
 }
 func (s *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO) SetReportId(v string) *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO {
     s.ReportId = &v
+    return s
+}
+func (s *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO) SetProduceName(v string) *AlibabaAlihealthSynergyYzwQuerysealdrugreportOcrSealDrugReportDTO {
+    s.ProduceName = &v
     return s
 }
