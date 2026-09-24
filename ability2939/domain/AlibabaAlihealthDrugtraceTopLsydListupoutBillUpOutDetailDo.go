@@ -122,6 +122,10 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo struct {
         委托企业entId对应的名称     */
     AssEntName  *string `json:"ass_ent_name,omitempty" `
 
+    /*
+        订货单编号     */
+    OrderCode  *string `json:"order_code,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetFromEntName(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
@@ -242,5 +246,9 @@ func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetAssEntId
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetAssEntName(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
     s.AssEntName = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo) SetOrderCode(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutBillUpOutDetailDo {
+    s.OrderCode = &v
     return s
 }

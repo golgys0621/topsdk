@@ -42,6 +42,10 @@ type AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto struct {
         药品信息数据     */
     DrugInfosDtoList  *[]AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto `json:"drug_infos_dto_list,omitempty" `
 
+    /*
+        订货单编号     */
+    OrderCode  *string `json:"order_code,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto) SetBillCode(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto {
@@ -82,5 +86,9 @@ func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto) SetU
 }
 func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto) SetDrugInfosDtoList(v []AlibabaAlihealthDrugtraceTopLsydListupoutDetailDrugInfosDto) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto {
     s.DrugInfosDtoList = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto) SetOrderCode(v string) *AlibabaAlihealthDrugtraceTopLsydListupoutDetailBillUpOutDetailDto {
+    s.OrderCode = &v
     return s
 }

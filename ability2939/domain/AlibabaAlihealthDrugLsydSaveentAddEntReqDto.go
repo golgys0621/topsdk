@@ -50,6 +50,10 @@ type AlibabaAlihealthDrugLsydSaveentAddEntReqDto struct {
         追溯负责人联系邮箱     */
     Email  *string `json:"email,omitempty" `
 
+    /*
+        企业自定义编号     */
+    PartnerId  *string `json:"partner_id,omitempty" `
+
 }
 
 func (s *AlibabaAlihealthDrugLsydSaveentAddEntReqDto) SetDictRegionDetail(v string) *AlibabaAlihealthDrugLsydSaveentAddEntReqDto {
@@ -98,5 +102,9 @@ func (s *AlibabaAlihealthDrugLsydSaveentAddEntReqDto) SetContactPsnNm(v string) 
 }
 func (s *AlibabaAlihealthDrugLsydSaveentAddEntReqDto) SetEmail(v string) *AlibabaAlihealthDrugLsydSaveentAddEntReqDto {
     s.Email = &v
+    return s
+}
+func (s *AlibabaAlihealthDrugLsydSaveentAddEntReqDto) SetPartnerId(v string) *AlibabaAlihealthDrugLsydSaveentAddEntReqDto {
+    s.PartnerId = &v
     return s
 }
